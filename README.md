@@ -1,1 +1,1 @@
-"# portfolio" 
+I'm Usman Ali, a Software Engineer with a strong specialization in web development. I craft responsive, dynamic, and user-centric web applications using HTML, CSS, Bootstrap, Python, and Django. Committed to writing clean, maintainable code, I am committed to ongoing learning and staying up to date with the latest advancements in web development
