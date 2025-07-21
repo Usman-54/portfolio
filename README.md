@@ -1,1 +1,2 @@
-"# portfolio" 
+About Me
+I'm Usman Ali, a graduate Software Engineer with a strong passion for web development. My expertise lies in building responsive and dynamic web applications, utilizing a robust skill set that includes HTML, CSS, Bootstrap, Python, Django, and MySQL. With a solid foundation in both frontend and backend development, I excel at creating clean, user-friendly interfaces powered by robust server-side logic. I am consistently expanding my capabilities through personal projects and real-world applications, always aiming to deliver efficient, scalable, and modern web solutions while enthusiastically contributing to the tech community.
