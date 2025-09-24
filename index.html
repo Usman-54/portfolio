@@ -2,697 +2,391 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Usman Ali | Software Engineer</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary-color: #0d6efd;
-      --secondary-color: #0a58ca;
-      --dark-color: #212529;
-      --light-bg: #f8f9fa;
-      --white-color: #fff;
-      --gray-text: #6c757d;
-      --accent-dark-blue: #004d99; /* A darker shade of primary for accents */
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: var(--light-bg);
-      padding-top: 70px; /* Adjust based on navbar height */
-      color: var(--dark-color);
-      overflow-x: hidden; /* Prevent horizontal scroll issues */
-    }
-
-    /* --- Navbar --- */
-    .navbar {
-      background: var(--dark-color);
-      transition: background-color 0.3s ease;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Softer shadow */
-    }
-
-    .navbar.scrolled {
-      background-color: rgba(33, 37, 41, 0.95); /* Slightly transparent when scrolled */
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* More prominent shadow when scrolled */
-    }
-
-    .navbar-brand {
-      font-weight: 700;
-      color: var(--white-color) !important;
-      font-size: 1.5rem;
-      letter-spacing: 0.5px;
-    }
-
-    .nav-link {
-      color: rgba(255, 255, 255, 0.7) !important;
-      font-weight: 500;
-      transition: color 0.3s ease, transform 0.2s ease;
-      position: relative;
-      padding: 0.5rem 1rem !important; /* Adjust padding for better look */
-    }
-
-    .nav-link:hover, .nav-link.active {
-      color: var(--white-color) !important;
-      transform: translateY(-2px);
-    }
-
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 0;
-      height: 2px;
-      background-color: var(--primary-color);
-      transition: width 0.3s ease;
-    }
-
-    .nav-link:hover::after, .nav-link.active::after {
-      width: 70%; /* Underline effect on hover/active */
-    }
-
-
-    /* --- Hero Section --- */
-    .hero {
-      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-      color: var(--white-color);
-      padding: 120px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh; /* Make hero section full height */
-      position: relative; /* For background patterns/overlays */
-      overflow: hidden; /* Hide anything outside */
-    }
-
-    /* Optional: Subtle background pattern/overlay for Hero */
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
-      opacity: 0.8;
-      z-index: 1;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2; /* Ensure content is above background pattern */
-      text-align: center;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .profile-img {
-      width: 220px; /* Slightly larger image */
-      height: 220px;
-      object-fit: cover;
-      border-radius: 50%;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* More pronounced shadow */
-      border: 6px solid rgba(255, 255, 255, 0.3); /* Thicker, softer border */
-      transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
-      animation: pulse 2s infinite alternate; /* Subtle pulse animation */
-    }
-
-    .profile-img:hover {
-      transform: scale(1.08) rotate(3deg); /* More distinct hover */
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
-    }
-
-    /* @keyframes pulse {
-      0% { transform: scale(1); }
-      100% { transform: scale(1.02); }
-    } */
-
-    .hero h1 {
-      font-size: 4.5rem; /* Larger, more impactful */
-      font-weight: 700;
-      margin-top: 30px;
-      margin-bottom: 15px;
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Text shadow for depth */
-      opacity: 0; /* For animation */
-      transform: translateY(20px); /* For animation */
-      animation: fadeInSlideUp 1s ease-out forwards 0.5s; /* Delay animation */
-    }
-
-    .hero .lead {
-      font-size: 1.8rem; /* Larger lead text */
-      opacity: 0.95;
-      font-weight: 300; /* Lighter weight for contrast */
-      opacity: 0; /* For animation */
-      transform: translateY(20px); /* For animation */
-      animation: fadeInSlideUp 1s ease-out forwards 0.8s; /* Delay animation */
-    }
-
-    @keyframes fadeInSlideUp {
-      to {
-        opacity: 1;
-        /* transform: translateY(0); */
-      }
-    }
-
-    .btn-primary-outline {
-      border: 2px solid var(--white-color);
-      color: var(--white-color);
-      padding: 14px 35px; /* Larger button */
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: 1.1rem; /* Larger text */
-      transition: all 0.3s ease;
-      margin-top: 30px; /* More space */
-      display: inline-flex; /* Align icon and text */
-      align-items: center;
-      gap: 8px; /* Space between icon and text */
-      opacity: 0; /* For animation */
-      transform: translateY(20px); /* For animation */
-      animation: fadeInSlideUp 1s ease-out forwards 1.1s; /* Delay animation */
-    }
-
-    .btn-primary-outline:hover {
-      background-color: var(--white-color);
-      color: var(--primary-color);
-      transform: translateY(-5px); /* More pronounced lift */
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    /* --- Sections --- */
-    .section {
-      padding: 100px 0;
-    }
-
-    .section-title {
-      font-weight: 700;
-      font-size: 3rem;
-      margin-bottom: 60px;
-      position: relative;
-      display: inline-block;
-      color: var(--dark-color);
-    }
-
-    .section-title::after {
-      content: '';
-      position: absolute;
-      width: 80px;
-      height: 4px;
-      background-color: var(--primary-color);
-      left: 50%;
-      transform: translateX(-50%);
-      bottom: -15px;
-      border-radius: 2px;
-    }
-
-    .bg-light {
-      background-color: var(--light-bg) !important;
-    }
-
-    .bg-white {
-      background-color: var(--white-color) !important;
-    }
-
-    /* --- About Section --- */
-    #about .lead {
-      font-size: 1.15rem;
-      line-height: 1.8;
-      color: var(--gray-text);
-    }
-
-    /* --- Skills & Languages Sections --- */
-    .list-group-item {
-      border: none;
-      padding: 15px 0;
-      font-size: 1.1rem;
-      display: flex;
-      align-items: center;
-      gap: 10px; /* Space between icon and text */
-    }
-
-    .list-group-item i {
-      font-size: 1.3rem; /* Slightly larger icons */
-      color: var(--primary-color); /* Ensure consistent icon color */
-    }
-
-    #languages p {
-      margin-bottom: 10px;
-      font-size: 1.1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-    }
-
-    /* --- Projects Section --- */
-    .card {
-      border: none;
-      border-radius: 12px; /* Slightly more rounded corners */
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      transition: all 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-    }
-
-    .card-title a {
-      color: var(--primary-color);
-      font-weight: 600;
-      font-size: 1.4rem;
-      transition: color 0.3s ease;
-    }
-
-    .card-title a:hover {
-      color: var(--accent-dark-blue); /* Darker blue on hover */
-      text-decoration: underline;
-    }
-
-    .card-text {
-      color: var(--gray-text);
-      font-size: 1rem;
-      margin-bottom: 15px;
-      width: 400px;
-    }
-
-    .btn-outline-primary {
-      color: var(--primary-color);
-      border-color: var(--primary-color);
-      border-radius: 50px;
-      padding: 8px 20px;
-      font-weight: 500;
-      transition: all 0.3s ease;
-    }
-
-    .btn-outline-primary:hover {
-      background-color: var(--primary-color);
-      color: var(--white-color);
-      transform: translateY(-2px);
-    }
-
-    .ratio-16x9 {
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    .modal-content {
-      border-radius: 12px;
-      overflow: hidden; /* Ensure video corners are rounded with modal */
-    }
-
-    /* Force video to appear instantly, overriding any default browser transition */
-    .modal-body video {
-        transition: none !important; /* Remove any CSS transition */
-        animation: none !important; /* Remove any CSS animation */
-        display: block !important; /* Ensure it's always block */
-        opacity: 1 !important; /* Ensure it's fully visible */
-    }
-
-
-    /* --- Contact Section --- */
-    #contact p {
-      font-size: 1.2rem;
-      margin-bottom: 15px;
-      color: var(--gray-text);
-    }
-
-    #contact i {
-      font-size: 1.5rem;
-      vertical-align: middle;
-      color: var(--primary-color); /* Ensure contact icons are primary color */
-    }
-
-    #contact a {
-      color: var(--dark-color);
-      margin: 0 15px;
-      transition: color 0.3s ease, transform 0.3s ease;
-    }
-
-    #contact a:hover {
-      color: var(--primary-color);
-      transform: translateY(-3px);
-    }
-
-    /* --- Footer --- */
-    footer {
-      background-color: var(--dark-color);
-      color: rgba(255, 255, 255, 0.7);
-      padding: 30px 0;
-      font-size: 0.9rem;
-    }
-
-    /* --- Responsive Adjustments --- */
-    @media (max-width: 992px) {
-      .hero h1 {
-        font-size: 3.5rem;
-      }
-      .hero .lead {
-        font-size: 1.5rem;
-      }
-      .profile-img {
-        width: 180px;
-        height: 180px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      body {
-        padding-top: 60px;
-      }
-      .hero {
-        padding: 80px 20px;
-        min-height: auto; /* Allow hero to shrink on smaller screens */
-      }
-      .hero h1 {
-        font-size: 2.8rem;
-        margin-top: 25px;
-      }
-      .hero .lead {
-        font-size: 1.2rem;
-      }
-      .section {
-        padding: 60px 0;
-      }
-      .section-title {
-        font-size: 2rem;
-        margin-bottom: 40px;
-      }
-      .profile-img {
-        width: 150px;
-        height: 150px;
-      }
-      .navbar-collapse {
-        text-align: center;
-      }
-      .navbar-nav .nav-item {
-        margin: 10px 0;
-      }
-      .btn-primary-outline {
-        padding: 10px 25px;
-        font-size: 1rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Usman Ali | Software Engineer</title>
+    <!-- Font-awesome for icons -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font-awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Font -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  
+    <link rel="stylesheet" href="css/style.css">
 </head>
+<!-- <body> -->
+<!-- Navbar -->
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#home">Usman Ali</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#languages">Languages</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 
-  <section class="hero" id="home">
-    <div class="hero-content">
-      <img src="images/usman.png" alt="Usman Ali" class="profile-img mb-4">
-      <h1 class="display-4">Usman Ali</h1>
-      <p class="lead">Software Engineer | Web Developer</p>
-        <a href="images/cv.pdf" download class="btn btn-outline-light mt-3 px-4">Download Resume</a>
- 
-    </div>
-  </section>
-
-  <section class="section bg-light" id="about">
-    <div class="container text-center">
-      <h2 class="section-title">About Me</h2>
-      <p class="mx-auto" style="max-width: 800px;">
-        As a passionate **Web Developer** with a Bachelor's degree in **Software Engineering**, I specialize in crafting **responsive, user-centric web applications**. I leverage modern technologies such as **HTML, CSS, Bootstrap, Python, and Django** to build robust and scalable solutions. My dedication to **clean code, continuous learning, and problem-solving** drives me to create impactful digital experiences.
-      </p>
-    </div>
-  </section>
-
-  <section class="section bg-white" id="skills">
-    <div class="container text-center">
-      <h2 class="section-title">Skills</h2>
-      <div class="row justify-content-center">
-        <div class="col-md-8 col-lg-6">
-          <ul class="list-group list-group-flush text-start">
-            <li class="list-group-item"><i class="bi bi-code-slash"></i>HTML5, CSS3, Bootstrap</li>
-            <li class="list-group-item"><i class="bi bi-file-earmark-code"></i>Python & Django</li>
-            <li class="list-group-item"><i class="bi bi-database"></i>MySQL</li>
-            <li class="list-group-item"><i class="bi bi-git"></i>Git, GitHub, VS Code</li>
-            <li class="list-group-item"><i class="bi bi-server"></i>Web Development Principles</li>
-          </ul>
+    <nav id="navbar" class="navbar fixed top-0 w-full z-50 p-4 transition-all duration-300 text-light bg-dark">
+        <div class="container mx-auto flex justify-between items-center">
+            <a class="text-2xl font-bold text-gray-100" href="#home">Portfolio</a>
+            <div id="navbarNav" class="hidden md:flex">
+                <ul class="flex space-x-8">
+                    <li><a class="nav-link text-gray-400 hover:text-white" href="#about">About</a></li>
+                    <li><a class="nav-link text-gray-400 hover:text-white" href="#skills">Skills</a></li>
+                    <li><a class="nav-link text-gray-400 hover:text-white" href="#languages">Languages</a></li>
+                    <li><a class="nav-link text-gray-400 hover:text-white" href="#projects">Projects</a></li>
+                    <li><a class="nav-link text-gray-400 hover:text-white" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-400 hover:text-white focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section bg-light" id="languages">
-    <div class="container text-center">
-      <h2 class="section-title">Languages</h2>
-      <p><i class="bi bi-translate"></i>English </p>
-      <p><i class="bi bi-translate"></i>Urdu </p>
-    </div>
-  </section>
-<section class="section bg-light py-5" id="projects">
-  <div class="container">
-    <h2 class="text-center mb-5">Projects</h2>
-    <div class="row justify-content-center">
-
-      <!-- Project 1: Vaccination System -->
-      <div class="col-lg-5 col-md-6 mb-4">
-        <div class="card h-100 shadow-sm">
-          <h5 class="card-title">
-                <a href="https://github.com/Usman-54/vaccination-system" target="_blank" rel="noopener noreferrer">
-                    Children Vaccination System
-                </a>
-            </h5>
-          <img src="images/vaccination.png" class="card-img-top">
-          <div class="card-body d-flex flex-column">
-            
-            <p class="card-text">
-              The Vaccination Management System is a Django web app to record and track children's vaccinations. 
-              It helps healthcare providers manage and update vaccine data, ensuring timely immunization and reminders.
-            </p>
-            <div class="mt-auto">
-                <button class="btn btn-outline-primary btn-sm" onclick="showDemoVideo('video1')">Live Demo</button>
-            </div>
-
-            <!-- Video Container -->
-            <div id="video1" class="mt-3" style="display: none;">
-              <div class="d-flex justify-content-end mb-2">
-                <button class="btn btn-sm btn-danger" onclick="hideDemoVideo('video1')">Close</button>
-              </div>
-              <div class="ratio ratio-16x9">
-                <video controls preload="none">
-                  <source src="https://github.com/Usman-54/portfolio/raw/53c4b125256688a12221fb47d93699546560f302/images/vaccine-app-demo1.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            </div>
-          </div>
+        <!-- Mobile Menu (hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 mt-4 py-2 rounded-lg shadow-xl">
+            <ul class="flex flex-col items-center space-y-4">
+                <li><a class="nav-link text-gray-400 hover:text-white" href="#about">About</a></li>
+                <li><a class="nav-link text-gray-400 hover:text-white" href="#skills">Skills</a></li>
+                <li><a class="nav-link text-gray-400 hover:text-white" href="#languages">Languages</a></li>
+                <li><a class="nav-link text-gray-400 hover:text-white" href="#projects">Projects</a></li>
+                <li><a class="nav-link text-gray-400 hover:text-white" href="#contact">Contact</a></li>
+            </ul>
         </div>
-      </div>
+    </nav>
 
-      <!-- Project 2: Khairunas Foundation -->
-      <div class="col-lg-5 col-md-6 mb-4">
-        <div class="card h-100 shadow-sm">
-          <h5 class="card-title">
-               <a href="https://github.com/Usman-54/FYP-project" target="_blank" rel="noopener noreferrer">
-                 Khairunas Foundation
-               </a>
-            </h5>
-           <img src="foundation.png" class="card-img-top">
-          <div class="card-body d-flex flex-column">
-            
-            <p class="card-text">
-              The Khairunas Foundation System is a Django web app for managing donations, volunteers, and admin tasks. 
-              It streamlines operations, improves coordination, and ensures efficient foundation management.
-            </p>
-            <div class="mt-auto">
-                 <button class="btn btn-outline-primary btn-sm" onclick="showDemoVideo('video2')">Live Demo</button>
-            </div>
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center p-4">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="flex flex-col-reverse md:flex-row items-center justify-between gap-8 py-16 md:py-24">
 
-            <!-- Video Container -->
-            <div id="video2" class="mt-3" style="display: none;">
-              <div class="d-flex justify-content-end mb-2">
-                <button class="btn btn-sm btn-danger" onclick="hideDemoVideo('video2')">Close</button>
-              </div>
-              <div class="ratio ratio-16x9">
-                <video controls preload="none">
-                  <source src="https://github.com/Usman-54/portfolio/raw/53c4b125256688a12221fb47d93699546560f302/images/app-demo1.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+                <!-- Left Side: Text and Buttons -->
+                <div class="w-full md:w-1/2 text-center md:text-left">
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 leading-tight text-light">
+                        <span class="text-gradient">Hello, I'm</span><br>Usman Ali
+                    </h1>
 
-    </div>
-  </div>
-</section>
+                    <p class="text-xl sm:text-2xl text-gray-400 mb-6">
+                        I'm a <span id="typed-text" class="text-gradient font-semibold typing-effect"></span>
+                    </p>
 
+                    <p class="text-md text-gray-400 mb-8 max-w-lg mx-auto md:mx-0">
+                        Passionate about creating beautiful and functional web experiences. Let's build something
+                        amazing together!
+                    </p>
+                    <!-- <div class="d-flex justify-content-center gap-3 mt-4"> -->
 
-  <!-- <section class="section bg-white" id="projects">
-    <div class="container">
-      <h2 class="section-title text-center">Projects</h2>
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <div class="card mb-5">
-            <div class="card-body p-4">
-              <h5 class="card-title mb-3"><a href="https://github.com/Usman-54/vaccination-system" target="_blank" rel="noopener noreferrer">Children Vaccination System <i class="bi bi-box-arrow-up-right small ms-1"></i></a></h5>
-              <p class="card-text">A comprehensive Django-based system designed to efficiently manage and track vaccination records for children. Features user authentication, detailed record keeping, and reporting.</p>
-              <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#project1VideoModal">Live Demo</button>
-              <div class="modal fade" id="project1VideoModal" tabindex="-1" aria-labelledby="project1VideoModalLabel">
-                <div class="modal-dialog modal-lg modal-dialog-centered">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="project1VideoModalLabel">Children Vaccination System Demo</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="flex justify-center gap-4 mt-6 ">
+                        <a href="images/Usmancv.pdf" class="inline-block bg-white text-gray-900 font-semibold py-3 px-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                            <i class="fas fa-download mr-2"></i>Resume
+                        </a>
+                        <a href="#contact"
+                            class="inline-block border border-gray-600 text-gray-200 font-semibold py-3 px-6 rounded-full hover:bg-gray-800 transition-all duration-300">
+                            <i class="fas fa-envelope mr-2"></i>Contact
+                        </a>
                     </div>
-                    <div class="modal-body p-0">
-                      <div class="ratio ratio-16x9">
-                        <video controls class="embed-responsive-item" preload="auto">
-                          <source src="images/vaccine-app-demo1.mp4" type="video/mp4">
-                          Your browser does not support the video tag.
-                        </video>
-                      </div>
-                    </div>
-                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
 
-          <div class="card mb-5">
-            <div class="card-body p-4">
-              <h5 class="card-title mb-3"><a href="https://github.com/Usman-54/FYP-project" target="_blank" rel="noopener noreferrer">Khairunas Foundation <i class="bi bi-box-arrow-up-right small ms-1"></i></a></h5>
-              <p class="card-text">A Django-powered platform developed for Khairunas Foundation to streamline the management of donations, volunteers, and operational activities. Enhances organizational efficiency and transparency.</p>
-              <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#project2VideoModal">Live Demo</button>
-              <div class="modal fade" id="project2VideoModal" tabindex="-1" aria-labelledby="project2VideoModalLabel">
-                <div class="modal-dialog modal-lg modal-dialog-centered">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="project2VideoModalLabel">Khairunas Foundation Demo</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <!-- Right Side: Profile Image -->
+                <div class="w-full md:w-1/2 flex justify-center ">
+                    <div
+                        class="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full overflow-hidden shadow-2xl ring-4 ring-purple-500/50">
+                        <img src="images/usman.jpg" alt="Usman Ali"
+                            class="absolute inset-0 w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
+                            onerror="this.onerror=null;this.src='https://placehold.co/800x800/2f3640/95a5a6?text=Image+Unavailable'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-transparent"></div>
                     </div>
-                    <div class="modal-body p-0">
-                      <div class="ratio ratio-16x9">
-                        <video controls>
-                          <source src="https://github.com/Usman-54/portfolio/raw/53c4b125256688a12221fb47d93699546560f302/images/vaccine-app-demo1.mp4" type="video/mp4">
-                          Your browser does not support the video tag.
-                        </video>
-                      </div>
-                    </div>
-                  </div>
                 </div>
-              </div>
+
             </div>
-          </div>
-
         </div>
-      </div>
-    </div>
-  </section> -->
+    </section>
 
-  <section class="section bg-light" id="contact">
-    <div class="container text-center">
-      <h2 class="section-title">Contact Me</h2>
-      <p><a href="mailto:usmnse@gmail.com" class="text-decoration-none text-dark"><i class="bi bi-envelope-fill"></i>usmnse@gmail.com</a></p>
-      <p><a href="tel:+923034230454" class="text-decoration-none text-dark"><i class="bi bi-phone-fill"></i>+92 303 4230454</a></p>
-      <div class="mt-4">
-        <a href="https://github.com/Usman-54" target="_blank" rel="noopener noreferrer" class="text-dark mx-3"><i class="bi bi-github fs-2"></i></a>
-        <a href="https://linkedin.com/in/usman-ali-software-engineer" target="_blank" rel="noopener noreferrer" class="text-primary mx-3"><i class="bi bi-linkedin fs-2"></i></a>
-      </div>
-    </div>
-  </section>
+    <!-- About -->
+    <section class="section bg-light" id="about">
+        <div class="container text-center">
+            <h2 class="section-title">About Me</h2>
+            <p class="mx-auto" style="max-width: 800px;">
+                As a full-stack web developer, I specialize in building comprehensive and scalable web applications. My
+                expertise spans both the front end and back end, allowing me to create dynamic, responsive, and robust
+                digital solutions.
 
-  <footer class="text-center">
-    <div class="container">
-      <small>&copy; 2025 Usman Ali. All rights reserved.</small>
-    </div>
-  </footer>
+                On the front end, I use HTML, CSS, and JavaScript to build intuitive user interfaces, ensuring they are
+                visually appealing and fully responsive with Bootstrap. For the back end, I develop powerful server-side
+                logic and database solutions using Python (Django) and PHP (Laravel). I'm skilled in handling every
+                aspect of the development lifecycle, from concept to deployment.</p>
+        </div>
+    </section>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // *** START: ADDED CODE ***
-    // This function shows the video container and plays the video
-    function showDemoVideo(videoId) {
-        // Hide any other currently playing video first
-        hideAllVideos(); 
-        
-        const videoContainer = document.getElementById(videoId);
-        if (videoContainer) {
-            videoContainer.style.display = 'block';
-            const video = videoContainer.querySelector('video');
-            if (video) {
-                video.play();
-            }
-        }
-    }
+    <!-- Skills -->
+    <section class="section bg-white" id="skills">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Skills</h2>
+            <div class="row row-cols-1 row-cols-md-4 g-4 justify-content-center">
 
-    // This function hides the video container, pauses the video, and resets it
-    function hideDemoVideo(videoId) {
-        const videoContainer = document.getElementById(videoId);
-        if (videoContainer) {
-            videoContainer.style.display = 'none';
-            const video = videoContainer.querySelector('video');
-            if (video) {
-                video.pause();
-                video.currentTime = 0; // Rewind to the beginning
-            }
-        }
-    }
+                <!-- HTML -->
+                <div class="col">
+                    <div class="skill-card text-center">
+                        <div class="skill-circle" data-percent="90" data-color="#f16529">
+                            <svg viewBox="0 0 120 120">
+                                <circle class="skill-track" cx="60" cy="60" r="52"></circle>
+                                <circle class="skill-fill" cx="60" cy="60" r="52"></circle>
+                            </svg>
+                            <div class="skill-center">
+                                <i class="bi bi-code-slash"></i>
+                                <div class="skill-percent">90%</div>
+                            </div>
+                        </div>
+                        <div class="skill-label">HTML</div>
+                        <div class="skill-sub">Markup & Semantics</div>
+                    </div>
+                </div>
 
-    // Helper function to close all videos before opening a new one
-    function hideAllVideos() {
-        document.querySelectorAll('div[id^="video"]').forEach(container => {
-            hideDemoVideo(container.id);
-        });
-    }
-    // *** END: ADDED CODE ***
+                <!-- CSS -->
+                <div class="col">
+                    <div class="skill-card text-center">
+                        <div class="skill-circle" data-percent="75" data-color="#2965f1">
+                            <svg viewBox="0 0 120 120">
+                                <circle class="skill-track" cx="60" cy="60" r="52"></circle>
+                                <circle class="skill-fill" cx="60" cy="60" r="52"></circle>
+                            </svg>
+                            <div class="skill-center">
+                                <i class="bi bi-palette"></i>
+                                <div class="skill-percent">75%</div>
+                            </div>
+                        </div>
+                        <div class="skill-label">CSS</div>
+                        <div class="skill-sub">Styling & Layout</div>
+                    </div>
+                </div>
+
+                <!-- Bootstrap -->
+                <div class="col">
+                    <div class="skill-card text-center">
+                        <div class="skill-circle" data-percent="75" data-color="#563d7c">
+                            <svg viewBox="0 0 120 120">
+                                <circle class="skill-track" cx="60" cy="60" r="52"></circle>
+                                <circle class="skill-fill" cx="60" cy="60" r="52"></circle>
+                            </svg>
+                            <div class="skill-center">
+                                <i class="bi bi-bootstrap-fill"></i>
+                                <div class="skill-percent">75%</div>
+                            </div>
+                        </div>
+                        <div class="skill-label">Bootstrap</div>
+                        <div class="skill-sub">UI Framework</div>
+                    </div>
+                </div>
+
+                <!-- Python -->
+                <div class="col">
+                    <div class="skill-card text-center">
+                        <div class="skill-circle" data-percent="80" data-color="#3776ab">
+                            <svg viewBox="0 0 120 120">
+                                <circle class="skill-track" cx="60" cy="60" r="52"></circle>
+                                <circle class="skill-fill" cx="60" cy="60" r="52"></circle>
+                            </svg>
+                            <div class="skill-center">
+                                <i class="bi bi-terminal"></i>
+                                <div class="skill-percent">80%</div>
+                            </div>
+                        </div>
+                        <div class="skill-label">Python</div>
+                        <div class="skill-sub">Programming</div>
+                    </div>
+                </div>
+
+                <!-- Django -->
+                <div class="col">
+                    <div class="skill-card text-center">
+                        <div class="skill-circle" data-percent="90" data-color="#092e20">
+                            <svg viewBox="0 0 120 120">
+                                <circle class="skill-track" cx="60" cy="60" r="52"></circle>
+                                <circle class="skill-fill" cx="60" cy="60" r="52"></circle>
+                            </svg>
+                            <div class="skill-center">
+                                <i class="bi bi-server"></i>
+                                <div class="skill-percent">90%</div>
+                            </div>
+                        </div>
+                        <div class="skill-label">Django</div>
+                        <div class="skill-sub">Web Framework</div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill-card text-center">
+                        <div class="skill-circle" data-percent="85" data-color="#8892BF">
+                            <svg viewBox="0 0 120 120">
+                                <circle class="skill-track" cx="60" cy="60" r="52"></circle>
+                                <circle class="skill-fill" cx="60" cy="60" r="52"></circle>
+                            </svg>
+                            <div class="skill-center">
+                                <i class="bi bi-code-slash"></i> <!-- PHP related icon -->
+                                <div class="skill-percent">85%</div>
+                            </div>
+                        </div>
+                        <div class="skill-label">PHP</div>
+                        <div class="skill-sub">Backend Language</div>
+                    </div>
+                </div>
 
 
-    // Smooth scrolling for navigation links (Your existing code)
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
+                <!-- Laravel -->
+                <div class="col">
+                    <div class="skill-card text-center">
+                        <div class="skill-circle" data-percent="80" data-color="#ff2d20">
+                            <svg viewBox="0 0 120 120">
+                                <circle class="skill-track" cx="60" cy="60" r="52"></circle>
+                                <circle class="skill-fill" cx="60" cy="60" r="52"></circle>
+                            </svg>
+                            <div class="skill-center">
+                                <i class="bi bi-box"></i>
+                                <div class="skill-percent">80%</div>
+                            </div>
+                        </div>
+                        <div class="skill-label">Laravel</div>
+                        <div class="skill-sub">PHP Framework</div>
+                    </div>
+                </div>
 
-        const targetElement = document.querySelector(this.getAttribute('href'));
-        if(targetElement) {
-            targetElement.scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-      });
-    });
+                <!-- MySQL -->
+                <div class="col">
+                    <div class="skill-card text-center">
+                        <div class="skill-circle" data-percent="80" data-color="#00758f">
+                            <svg viewBox="0 0 120 120">
+                                <circle class="skill-track" cx="60" cy="60" r="52"></circle>
+                                <circle class="skill-fill" cx="60" cy="60" r="52"></circle>
+                            </svg>
+                            <div class="skill-center">
+                                <i class="bi bi-database"></i>
+                                <div class="skill-percent">80%</div>
+                            </div>
+                        </div>
+                        <div class="skill-label">MySQL</div>
+                        <div class="skill-sub">Database</div>
+                    </div>
+                </div>
 
-    // Add sticky/scrolled class to navbar on scroll (Your existing code)
-    window.addEventListener('scroll', function() {
-      const navbar = document.querySelector('.navbar');
-      if (navbar) {
-        if (window.scrollY > 50) { 
-          navbar.classList.add('scrolled');
-        } else {
-          navbar.classList.remove('scrolled');
-        }
-      }
-    });
+                <!-- JS-->
+                <!-- JavaScript -->
+                <!-- JavaScript -->
+                <div class="col">
+                    <div class="skill-card text-center">
+                        <div class="skill-circle" data-percent="65" data-color="#f7df1e">
+                            <svg viewBox="0 0 120 120">
+                                <circle class="skill-track" cx="60" cy="60" r="52"></circle>
+                                <circle class="skill-fill" cx="60" cy="60" r="52"></circle>
+                            </svg>
+                            <div class="skill-center">
+                                <i class="bi bi-braces"></i>
+                                <div class="skill-percent">65%</div>
+                            </div>
+                        </div>
+                        <div class="skill-label">JavaScript</div>
+                        <div class="skill-sub">Frontend & Server-side</div>
+                    </div>
+                </div>
 
-</script>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages -->
+    <section class="section bg-light" id="languages">
+        <div class="container text-center">
+            <h2 class="section-title">Languages</h2>
+            <p><i class="bi bi-translate"></i> English</p>
+            <p><i class="bi bi-translate"></i> Urdu</p>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section bg-white" id="projects">
+        <div class="container">
+            <h2 class="section-title text-center">Projects</h2>
+            <div class="row justify-content-center">
+
+                <!-- Project Card 1 -->
+                <div class="col-md-5 mx-4">
+                    <div class="card shadow-sm">
+                        <a href="https://github.com/Usman-54/vaccination-system" class="text-decoration-none fw-bold">
+                            Children Vaccination System
+                        </a>
+                        <img src="images/vaccination.png" class="card-img-top mt-4" alt="Vaccination System">
+                        <div class="card-body">
+                            <p class="card-text">
+                                Django-based web app to record and track children's vaccinations. Helps ensure timely
+                                immunization.
+                            </p>
+                            <a href="#" class="btn btn-outline-primary btn-sm" onclick="showDemoVideo('video1')">Live
+                                Demo</a>
+                            <div id="video1" class="mt-3" style="display:none;">
+                                <div class="d-flex justify-content-end mb-2">
+                                    <button class="btn btn-sm btn-danger"
+                                        onclick="hideDemoVideo('video1')">Close</button>
+                                </div>
+                                <div class="ratio ratio-16x9">
+                                    <video controls>
+                                        <source src="images/vaccine-app-demo1.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="col-md-5 mx-4">
+                    <div class="card shadow-sm">
+                        <a href="https://github.com/Usman-54/foundation-system" class="text-decoration-none fw-bold">
+                            Foundation Management System
+                        </a>
+                        <img src="images/foundation.png" class="card-img-top mt-4" alt="Foundation System">
+                        <div class="card-body">
+                            <p class="card-text">
+                                Laravel & MySQL project to manage NGO foundation records, donations, and volunteers.
+                            </p>
+                            <a href="https://github.com/Usman-54" class="btn btn-outline-primary btn-sm" onclick="showDemoVideo('video2')">Live
+                                Demo</a>
+                            <div id="video2" class="mt-3" style="display:none;">
+                                <div class="d-flex justify-content-end mb-2">
+                                    <button class="btn btn-sm btn-danger"
+                                        onclick="hideDemoVideo('video2')">Close</button>
+                                </div>
+                                <div class="ratio ratio-16x9">
+                                    <video controls>
+                                        <source src="images/app-demo1.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section bg-light" id="contact">
+        <div class="container text-center">
+            <h2 class="section-title">Contact Me</h2>
+            <p><a href="mailto:usmnse@gmail.com"><i class="bi bi-envelope-fill"></i> usmnse@gmail.com</a></p>
+            <p><a href="tel:+923034230454"><i class="bi bi-phone-fill"></i> +92 303 4230454</a></p>
+            <div class="mt-4">
+                <a href="https://github.com/Usman-54" target="_blank"><i class="bi bi-github fs-3"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-3 bg-dark text-light">
+        <p class="mb-0">&copy; 2025 Usman Ali. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap & Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
