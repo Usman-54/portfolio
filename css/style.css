@@ -1,0 +1,281 @@
+/* General Styles */
+body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117;
+            color: black;
+            scroll-behavior: smooth;
+            
+        }
+
+        .text-gradient {
+            background: linear-gradient(90deg, #11e2f7, #6641e7);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Simple typing effect animation */
+        .typing-effect::after {
+            content: '|';
+            animation: blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes blink-caret {
+            from, to {
+                color: transparent;
+            }
+            50% {
+                color: #c9d1d9;
+            }
+        }
+
+        /* Navbar custom styles */
+        .navbar {
+            transition: background 0.4s ease, padding 0.4s ease;
+        }
+
+        .navbar.scrolled {
+            background-color: rgba(13, 17, 23, 0.9);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-link:hover {
+            color: #11e2f7 !important;
+        }
+/* body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+
+.navbar {
+  background: transparent;
+  transition: background 0.4s ease, padding 0.4s ease;
+  padding: 20px 0;
+}
+
+.navbar.scrolled {
+  background: #212529;
+  padding: 10px 0;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  font-weight: 500;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #0d6efd !important;
+}
+body {
+            font-family: 'Inter', sans-serif;
+            background-color: #687a93;
+            color: #c9d1d9;
+        }
+
+        .text-gradient {
+            background: linear-gradient(90deg, #11e2f7, #6641e7);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .typing-effect::after {
+            content: '|';
+            animation: blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes blink-caret {
+            from, to {
+                color: transparent;
+            }
+            50% {
+                color: #c9d1d9;
+            }
+        } */
+        
+/* Hero Section */
+/* .hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/hero-bg.jpg") no-repeat center center/cover;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero-content h1 {
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.hero-content .lead {
+  font-size: 1.3rem;
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+} */
+
+/* Sections */
+.section {
+  padding: 80px 0;
+}
+
+.section-title {
+  font-weight: 700;
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #0d6efd;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Skills */
+.skill-card {
+  background: #fff;
+  padding: 25px 15px;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.skill-card:hover {
+  transform: translateY(-8px);
+}
+
+.skill-circle {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 15px;
+}
+
+.skill-circle svg {
+  transform: rotate(-90deg);
+  width: 120px;
+  height: 120px;
+}
+
+.skill-track {
+  fill: none;
+  stroke: #eee;
+  stroke-width: 12;
+}
+
+.skill-fill {
+  fill: none;
+  stroke-width: 12;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.5s;
+}
+
+.skill-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.skill-center i {
+  font-size: 1.6rem;
+  color: #0d6efd;
+  display: block;
+}
+
+.skill-percent {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.skill-label {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.skill-sub {
+  color: #666;
+  font-size: 0.85rem;
+}
+
+/* Projects */
+.card {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  border-radius: 10px;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+/* Contact */
+#contact a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s;
+}
+
+#contact a:hover {
+  color: #0d6efd;
+}
+
+#contact i {
+  margin-right: 8px;
+}
+
+/* Footer */
+footer {
+  font-size: 0.9rem;
+  background: #111;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content .lead {
+    font-size: 1rem;
+  }
+
+  .skill-card {
+    padding: 20px 10px;
+  }
+}
