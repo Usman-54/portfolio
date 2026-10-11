@@ -2,391 +2,801 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Usman Ali | Software Engineer</title>
-    <!-- Font-awesome for icons -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font-awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Google Font -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-   
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usman Ali | Backend &amp; Full-Stack Developer</title>
+
+  <!-- SEO -->
+  <meta name="description"
+    content="Usman Ali — backend-focused full-stack developer at PixelCode Technologies. Building REST APIs, database-driven services and complete web applications with Django, Django REST Framework, Laravel, Node.js and MySQL.">
+  <meta name="author" content="Usman Ali">
+  <link rel="canonical" href="https://usman-54.github.io/portfolio/">
+  <meta name="theme-color" content="#070c16">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Usman Ali | Backend &amp; Full-Stack Developer">
+  <meta property="og:description"
+    content="REST APIs, authentication, databases and complete full-stack applications — Django, Django REST Framework, Laravel, Node.js and MySQL.">
+  <meta property="og:url" content="https://usman-54.github.io/portfolio/">
+  <meta property="og:image" content="https://usman-54.github.io/portfolio/assets/images/usman.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Bootstrap 5.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Fonts: Sora (display) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<!-- <body> -->
-<!-- Navbar -->
 
 <body>
+  <a class="skip-link visually-hidden-focusable" href="#home">Skip to content</a>
 
-    <nav id="navbar" class="navbar fixed top-0 w-full z-50 p-4 transition-all duration-300 text-light bg-dark">
-        <div class="container mx-auto flex justify-between items-center">
-            <a class="text-2xl font-bold text-gray-100" href="#home">Portfolio</a>
-            <div id="navbarNav" class="hidden md:flex">
-                <ul class="flex space-x-8">
-                    <li><a class="nav-link text-gray-400 hover:text-white" href="#about">About</a></li>
-                    <li><a class="nav-link text-gray-400 hover:text-white" href="#skills">Skills</a></li>
-                    <li><a class="nav-link text-gray-400 hover:text-white" href="#languages">Languages</a></li>
-                    <li><a class="nav-link text-gray-400 hover:text-white" href="#projects">Projects</a></li>
-                    <li><a class="nav-link text-gray-400 hover:text-white" href="#contact">Contact</a></li>
-                </ul>
+  <!-- ============ NAVBAR ============ -->
+  <nav class="navbar navbar-expand-lg fixed-top site-nav" id="siteNav" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand" href="#home">
+        <span class="brand-mark" aria-hidden="true">UA</span>Usman&nbsp;Ali
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+        aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section id="home" class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container position-relative">
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-7 text-center text-lg-start">
+            <p class="hero-kicker">
+              <span class="dot" aria-hidden="true"></span>Backend &amp; Full-Stack Developer
+            </p>
+            <h1 class="hero-name">Usman&nbsp;Ali</h1>
+            <p class="hero-intro mx-auto mx-lg-0">
+              I design and build the server side of web applications — REST APIs with token
+              authentication, relational databases and clean business logic — and wire them into
+              complete, working full-stack products. Currently building backend systems at
+              <a href="https://pixelcodetechnology.com/" target="_blank" rel="noopener" class="link-accent">PixelCode
+                Technologies</a>.
+            </p>
+            <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-2 mt-4">
+              <a href="#projects" class="btn btn-cta">
+                <i class="bi bi-grid-1x2 me-2" aria-hidden="true"></i>Explore My Projects
+              </a>
+              <a href="#contact" class="btn btn-outline-cta">
+                <i class="bi bi-envelope me-2" aria-hidden="true"></i>Contact Me
+              </a>
+              <a href="assets/docs/Usman_Ali_Resume.pdf" class="btn btn-ghost" download>
+                <i class="bi bi-download me-2" aria-hidden="true"></i>Download CV
+              </a>
             </div>
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-button" class="md:hidden text-gray-400 hover:text-white focus:outline-none">
-                <i class="fas fa-bars text-2xl"></i>
-            </button>
-        </div>
-        <!-- Mobile Menu (hidden by default) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 mt-4 py-2 rounded-lg shadow-xl">
-            <ul class="flex flex-col items-center space-y-4">
-                <li><a class="nav-link text-gray-400 hover:text-white" href="#about">About</a></li>
-                <li><a class="nav-link text-gray-400 hover:text-white" href="#skills">Skills</a></li>
-                <li><a class="nav-link text-gray-400 hover:text-white" href="#languages">Languages</a></li>
-                <li><a class="nav-link text-gray-400 hover:text-white" href="#projects">Projects</a></li>
-                <li><a class="nav-link text-gray-400 hover:text-white" href="#contact">Contact</a></li>
+            <ul class="list-unstyled d-flex justify-content-center justify-content-lg-start gap-2 mt-4 mb-0">
+              <li>
+                <a href="https://github.com/Usman-54" target="_blank" rel="noopener" class="social-btn"
+                  aria-label="Usman Ali on GitHub">
+                  <i class="bi bi-github" aria-hidden="true"></i><span>GitHub</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/usman54/" target="_blank" rel="noopener" class="social-btn"
+                  aria-label="Usman Ali on LinkedIn">
+                  <i class="bi bi-linkedin" aria-hidden="true"></i><span>LinkedIn</span>
+                </a>
+              </li>
             </ul>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center p-4">
-        <div class="container mx-auto px-4 max-w-7xl">
-            <div class="flex flex-col-reverse md:flex-row items-center justify-between gap-8 py-16 md:py-24">
-
-                <!-- Left Side: Text and Buttons -->
-                <div class="w-full md:w-1/2 text-center md:text-left">
-                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 leading-tight text-light">
-                        <span class="text-gradient">Hello, I'm</span><br>Usman Ali
-                    </h1>
-
-                    <p class="text-xl sm:text-2xl text-gray-400 mb-6">
-                        I'm a <span id="typed-text" class="text-gradient font-semibold typing-effect"></span>
-                    </p>
-
-                    <p class="text-md text-gray-400 mb-8 max-w-lg mx-auto md:mx-0">
-                        Passionate about creating beautiful and functional web experiences. Let's build something
-                        amazing together!
-                    </p>
-                    <!-- <div class="d-flex justify-content-center gap-3 mt-4"> -->
-
-                    <div class="flex justify-center gap-4 mt-6 ">
-                        <a href="images/Usmancv.pdf" class="inline-block bg-white text-gray-900 font-semibold py-3 px-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                            <i class="fas fa-download mr-2"></i>Resume
-                        </a>
-                        <a href="#contact"
-                            class="inline-block border border-gray-600 text-gray-200 font-semibold py-3 px-6 rounded-full hover:bg-gray-800 transition-all duration-300">
-                            <i class="fas fa-envelope mr-2"></i>Contact
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Right Side: Profile Image -->
-                <div class="w-full md:w-1/2 flex justify-center ">
-                    <div
-                        class="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full overflow-hidden shadow-2xl ring-4 ring-purple-500/50">
-                        <img src="images/usman.jpg" alt="Usman Ali"
-                            class="absolute inset-0 w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
-                            onerror="this.onerror=null;this.src='https://placehold.co/800x800/2f3640/95a5a6?text=Image+Unavailable'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-transparent"></div>
-                    </div>
-                </div>
-
+          </div>
+          <div class="col-lg-5 text-center">
+            <div class="portrait-wrap mx-auto">
+              <img src="assets/images/usman.jpg" alt="Portrait of Usman Ali" width="320" height="320"
+                class="portrait-img">
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- About -->
-    <section class="section bg-light" id="about">
-        <div class="container text-center">
-            <h2 class="section-title">About Me</h2>
-            <p class="mx-auto" style="max-width: 800px;">
-                As a full-stack web developer, I specialize in building comprehensive and scalable web applications. My
-                expertise spans both the front end and back end, allowing me to create dynamic, responsive, and robust
-                digital solutions.
-
-                On the front end, I use HTML, CSS, and JavaScript to build intuitive user interfaces, ensuring they are
-                visually appealing and fully responsive with Bootstrap. For the back end, I develop powerful server-side
-                logic and database solutions using Python (Django) and PHP (Laravel). I'm skilled in handling every
-                aspect of the development lifecycle, from concept to deployment.</p>
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="row g-4 g-lg-5">
+          <div class="col-lg-5">
+            <p class="section-label">About</p>
+            <h2 class="section-title">Engineering the server side, end to end</h2>
+          </div>
+          <div class="col-lg-7">
+            <p class="text-white">
+              I'm a backend-focused full-stack developer at
+              <a href="https://pixelcodetechnology.com/" target="_blank" rel="noopener" class="link-accent">PixelCode
+                Technologies</a>.
+              My work starts at the data model — schemas, migrations, authentication and API
+              design — and carries through to the interfaces that use them.
+            </p>
+            <p class="text-white">
+              Most of my server-side experience is in Python with Django and Django REST Framework:
+              token-based authentication, CRUD services and automated inventory logic, backed by
+              MySQL. I also build with PHP and Laravel, use Node.js for server-side
+              JavaScript, and turn back ends into finished applications with HTML, CSS, Bootstrap
+              and JavaScript. I care about clean data design, sensible endpoints and code a
+              teammate can actually maintain — and I'm working toward deeper backend and
+              distributed-systems expertise.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Skills -->
-    <section class="section bg-white" id="skills">
-        <div class="container">
-            <h2 class="section-title text-center mb-5">Skills</h2>
-            <div class="row row-cols-1 row-cols-md-4 g-4 justify-content-center">
+    <!-- ============ SKILLS ============ -->
+    <section id="skills" class="section section-alt">
+      <div class="container">
+        <p class="section-label">Skills</p>
+        <h2 class="section-title">Backend-first technical toolkit</h2>
 
-                <!-- HTML -->
-                <div class="col">
-                    <div class="skill-card text-center">
-                        <div class="skill-circle" data-percent="90" data-color="#f16529">
-                            <svg viewBox="0 0 120 120">
-                                <circle class="skill-track" cx="60" cy="60" r="52"></circle>
-                                <circle class="skill-fill" cx="60" cy="60" r="52"></circle>
-                            </svg>
-                            <div class="skill-center">
-                                <i class="bi bi-code-slash"></i>
-                                <div class="skill-percent">90%</div>
-                            </div>
-                        </div>
-                        <div class="skill-label">HTML</div>
-                        <div class="skill-sub">Markup & Semantics</div>
-                    </div>
-                </div>
-
-                <!-- CSS -->
-                <div class="col">
-                    <div class="skill-card text-center">
-                        <div class="skill-circle" data-percent="75" data-color="#2965f1">
-                            <svg viewBox="0 0 120 120">
-                                <circle class="skill-track" cx="60" cy="60" r="52"></circle>
-                                <circle class="skill-fill" cx="60" cy="60" r="52"></circle>
-                            </svg>
-                            <div class="skill-center">
-                                <i class="bi bi-palette"></i>
-                                <div class="skill-percent">75%</div>
-                            </div>
-                        </div>
-                        <div class="skill-label">CSS</div>
-                        <div class="skill-sub">Styling & Layout</div>
-                    </div>
-                </div>
-
-                <!-- Bootstrap -->
-                <div class="col">
-                    <div class="skill-card text-center">
-                        <div class="skill-circle" data-percent="75" data-color="#563d7c">
-                            <svg viewBox="0 0 120 120">
-                                <circle class="skill-track" cx="60" cy="60" r="52"></circle>
-                                <circle class="skill-fill" cx="60" cy="60" r="52"></circle>
-                            </svg>
-                            <div class="skill-center">
-                                <i class="bi bi-bootstrap-fill"></i>
-                                <div class="skill-percent">75%</div>
-                            </div>
-                        </div>
-                        <div class="skill-label">Bootstrap</div>
-                        <div class="skill-sub">UI Framework</div>
-                    </div>
-                </div>
-
-                <!-- Python -->
-                <div class="col">
-                    <div class="skill-card text-center">
-                        <div class="skill-circle" data-percent="80" data-color="#3776ab">
-                            <svg viewBox="0 0 120 120">
-                                <circle class="skill-track" cx="60" cy="60" r="52"></circle>
-                                <circle class="skill-fill" cx="60" cy="60" r="52"></circle>
-                            </svg>
-                            <div class="skill-center">
-                                <i class="bi bi-terminal"></i>
-                                <div class="skill-percent">80%</div>
-                            </div>
-                        </div>
-                        <div class="skill-label">Python</div>
-                        <div class="skill-sub">Programming</div>
-                    </div>
-                </div>
-
-                <!-- Django -->
-                <div class="col">
-                    <div class="skill-card text-center">
-                        <div class="skill-circle" data-percent="90" data-color="#092e20">
-                            <svg viewBox="0 0 120 120">
-                                <circle class="skill-track" cx="60" cy="60" r="52"></circle>
-                                <circle class="skill-fill" cx="60" cy="60" r="52"></circle>
-                            </svg>
-                            <div class="skill-center">
-                                <i class="bi bi-server"></i>
-                                <div class="skill-percent">90%</div>
-                            </div>
-                        </div>
-                        <div class="skill-label">Django</div>
-                        <div class="skill-sub">Web Framework</div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="skill-card text-center">
-                        <div class="skill-circle" data-percent="85" data-color="#8892BF">
-                            <svg viewBox="0 0 120 120">
-                                <circle class="skill-track" cx="60" cy="60" r="52"></circle>
-                                <circle class="skill-fill" cx="60" cy="60" r="52"></circle>
-                            </svg>
-                            <div class="skill-center">
-                                <i class="bi bi-code-slash"></i> <!-- PHP related icon -->
-                                <div class="skill-percent">85%</div>
-                            </div>
-                        </div>
-                        <div class="skill-label">PHP</div>
-                        <div class="skill-sub">Backend Language</div>
-                    </div>
-                </div>
-
-
-                <!-- Laravel -->
-                <div class="col">
-                    <div class="skill-card text-center">
-                        <div class="skill-circle" data-percent="80" data-color="#ff2d20">
-                            <svg viewBox="0 0 120 120">
-                                <circle class="skill-track" cx="60" cy="60" r="52"></circle>
-                                <circle class="skill-fill" cx="60" cy="60" r="52"></circle>
-                            </svg>
-                            <div class="skill-center">
-                                <i class="bi bi-box"></i>
-                                <div class="skill-percent">80%</div>
-                            </div>
-                        </div>
-                        <div class="skill-label">Laravel</div>
-                        <div class="skill-sub">PHP Framework</div>
-                    </div>
-                </div>
-
-                <!-- MySQL -->
-                <div class="col">
-                    <div class="skill-card text-center">
-                        <div class="skill-circle" data-percent="80" data-color="#00758f">
-                            <svg viewBox="0 0 120 120">
-                                <circle class="skill-track" cx="60" cy="60" r="52"></circle>
-                                <circle class="skill-fill" cx="60" cy="60" r="52"></circle>
-                            </svg>
-                            <div class="skill-center">
-                                <i class="bi bi-database"></i>
-                                <div class="skill-percent">80%</div>
-                            </div>
-                        </div>
-                        <div class="skill-label">MySQL</div>
-                        <div class="skill-sub">Database</div>
-                    </div>
-                </div>
-
-                <!-- JS-->
-                <!-- JavaScript -->
-                <!-- JavaScript -->
-                <div class="col">
-                    <div class="skill-card text-center">
-                        <div class="skill-circle" data-percent="65" data-color="#f7df1e">
-                            <svg viewBox="0 0 120 120">
-                                <circle class="skill-track" cx="60" cy="60" r="52"></circle>
-                                <circle class="skill-fill" cx="60" cy="60" r="52"></circle>
-                            </svg>
-                            <div class="skill-center">
-                                <i class="bi bi-braces"></i>
-                                <div class="skill-percent">65%</div>
-                            </div>
-                        </div>
-                        <div class="skill-label">JavaScript</div>
-                        <div class="skill-sub">Frontend & Server-side</div>
-                    </div>
-                </div>
-
-
-
+        <div class="skill-panel">
+          <div class="skill-row skill-row-primary">
+            <h3 class="skill-cat"><i class="bi bi-hdd-network me-2" aria-hidden="true"></i>Backend Development</h3>
+            <div class="skill-chips">
+              <span class="chip">Python</span><span class="chip">Django</span><span class="chip">Django REST
+                Framework</span>
+              <span class="chip">Node.js</span><span class="chip">PHP</span><span class="chip">Laravel</span>
+              <span class="chip">REST APIs</span><span class="chip">Token Authentication</span><span
+                class="chip">Server-side Logic</span>
             </div>
-        </div>
-    </section>
-
-    <!-- Languages -->
-    <section class="section bg-light" id="languages">
-        <div class="container text-center">
-            <h2 class="section-title">Languages</h2>
-            <p><i class="bi bi-translate"></i> English</p>
-            <p><i class="bi bi-translate"></i> Urdu</p>
-        </div>
-    </section>
-
-    <!-- Projects -->
-    <section class="section bg-white" id="projects">
-        <div class="container">
-            <h2 class="section-title text-center">Projects</h2>
-            <div class="row justify-content-center">
-
-                <!-- Project Card 1 -->
-                <div class="col-md-5 mx-4">
-                    <div class="card shadow-sm">
-                        <a href="https://github.com/Usman-54/vaccination-system" class="text-decoration-none fw-bold">
-                            Children Vaccination System
-                        </a>
-                        <img src="images/vaccination.png" class="card-img-top mt-4" alt="Vaccination System">
-                        <div class="card-body">
-                            <p class="card-text">
-                                Django-based web app to record and track children's vaccinations. Helps ensure timely
-                                immunization.
-                            </p>
-                            <a href="#" class="btn btn-outline-primary btn-sm" onclick="showDemoVideo('video1')">Live
-                                Demo</a>
-                            <div id="video1" class="mt-3" style="display:none;">
-                                <div class="d-flex justify-content-end mb-2">
-                                    <button class="btn btn-sm btn-danger"
-                                        onclick="hideDemoVideo('video1')">Close</button>
-                                </div>
-                                <div class="ratio ratio-16x9">
-                                    <video controls>
-                                        <source src="images/vaccine-app-demo1.mp4" type="video/mp4">
-                                    </video>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card 2 -->
-                <div class="col-md-5 mx-4">
-                    <div class="card shadow-sm">
-                        <a href="https://github.com/Usman-54/foundation-system" class="text-decoration-none fw-bold">
-                            Foundation Management System
-                        </a>
-                        <img src="images/foundation.png" class="card-img-top mt-4" alt="Foundation System">
-                        <div class="card-body">
-                            <p class="card-text">
-                                Laravel & MySQL project to manage NGO foundation records, donations, and volunteers.
-                            </p>
-                            <a href="https://github.com/Usman-54" class="btn btn-outline-primary btn-sm" onclick="showDemoVideo('video2')">Live
-                                Demo</a>
-                            <div id="video2" class="mt-3" style="display:none;">
-                                <div class="d-flex justify-content-end mb-2">
-                                    <button class="btn btn-sm btn-danger"
-                                        onclick="hideDemoVideo('video2')">Close</button>
-                                </div>
-                                <div class="ratio ratio-16x9">
-                                    <video controls>
-                                        <source src="images/app-demo1.mp4" type="video/mp4">
-                                    </video>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+          </div>
+          <div class="skill-row">
+            <h3 class="skill-cat"><i class="bi bi-database me-2" aria-hidden="true"></i>Databases</h3>
+            <div class="skill-chips">
+              <span class="chip">MySQL</span><span class="chip">
+                <Schema Design</span><span class="chip">Migrations</span>
             </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="section bg-light" id="contact">
-        <div class="container text-center">
-            <h2 class="section-title">Contact Me</h2>
-            <p><a href="mailto:usmnse@gmail.com"><i class="bi bi-envelope-fill"></i> usmnse@gmail.com</a></p>
-            <p><a href="tel:+923034230454"><i class="bi bi-phone-fill"></i> +92 303 4230454</a></p>
-            <div class="mt-4">
-                <a href="https://github.com/Usman-54" target="_blank"><i class="bi bi-github fs-3"></i></a>
+          </div>
+          <div class="skill-row">
+            <h3 class="skill-cat"><i class="bi bi-window-sidebar me-2" aria-hidden="true"></i>Frontend &amp; Integration
+            </h3>
+            <div class="skill-chips">
+              <span class="chip">JavaScript</span><span class="chip">HTML5</span><span class="chip">CSS3</span><span
+                class="chip">Bootstrap 5</span>
+              <span class="chip">Frontend &harr; Backend Integration</span><span class="chip">Django Templates &amp;
+                Admin</span>
             </div>
+          </div>
+          <div class="skill-row">
+            <h3 class="skill-cat"><i class="bi bi-tools me-2" aria-hidden="true"></i>Tools &amp; Platforms</h3>
+            <div class="skill-chips">
+              <span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">GitHub Pages</span><span
+                class="chip">Environment &amp; Config Management</span>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="text-center py-3 bg-dark text-light">
-        <p class="mb-0">&copy; 2025 Usman Ali. All rights reserved.</p>
-    </footer>
+    <!-- ============ EXPERIENCE ============ -->
+    <section id="experience" class="section">
+      <div class="container">
+        <p class="section-label">Experience</p>
+        <h2 class="section-title">Work experience</h2>
 
-    <!-- Bootstrap & Script -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/script.js"></script>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-node" aria-hidden="true"></div>
+            <div class="timeline-card">
+              <div class="d-flex flex-wrap justify-content-between align-items-baseline gap-2">
+                <h3 class="role-title">Backend Developer</h3>
+                <!-- TODO: confirm employment dates and add here -->
+                <span class="role-meta muted-date">PixelCode Technologies</span>
+              </div>
+              <p class="role-company">
+                <a href="https://pixelcodetechnology.com/" target="_blank" rel="noopener">pixelcodetechnology.com</a>
+              </p>
+              <p class="role-desc text-muted-2">
+                Building and maintaining backend systems for client web applications at a
+                full-service digital agency.
+              </p>
+              <ul class="role-points">
+                <li>Design and optimize database schemas to support efficient data organization and application
+                  performance.</li>
+                <li>Participate in code reviews to ensure code quality and best practices.</li>
+                <li>Manage databases and assist with tasks that maintain data integrity.</li>
+                <li>Contribute across both backend development and frontend integration.</li>
+              </ul>
+              <div class="role-tech"><span>Backend Development</span><span>Databases</span><span>Web Applications</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-node" aria-hidden="true"></div>
+            <div class="timeline-card">
+              <div class="d-flex flex-wrap justify-content-between align-items-baseline gap-2">
+                <h3 class="role-title">Backend Development Intern</h3>
+                <!-- TODO: confirm internship dates and add here -->
+                <span class="role-meta muted-date">PixelCode Technologies</span>
+              </div>
+              <p class="role-company">
+                <a href="https://pixelcodetechnology.com/" target="_blank" rel="noopener">pixelcodetechnology.com</a>
+              </p>
+              <p class="role-desc text-muted-2">
+                Started at PixelCode Technologies as a backend development intern, gaining
+                hands-on experience with production web development workflows.
+              </p>
+              <ul class="role-points">
+                <li>Gained hands-on experience in both frontend and backend development.</li>
+                <li>Assisted with database management tasks to maintain data integrity.</li>
+              </ul>
+              <div class="role-tech"><span>Backend Fundamentals</span><span>Database Management</span></div>
+            </div>
+          </article>
+        </div>
+        <p class="note-line"><i class="bi bi-info-circle me-1" aria-hidden="true"></i>
+          Employment dates are being finalized and will be added shortly.</p>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects" class="section section-alt">
+      <div class="container">
+
+        <p class="section-label">Projects</p>
+        <h2 class="section-title">
+          Things I've built — with the code to prove it
+        </h2>
+
+        <div class="filter-bar" role="group" aria-label="Filter projects by category">
+          <button class="filter-btn active" data-filter="all" type="button">
+            All Projects
+          </button>
+          <button class="filter-btn" data-filter="backend" type="button">
+            Backend &amp; APIs
+          </button>
+          <button class="filter-btn" data-filter="fullstack" type="button">
+            Full-Stack
+          </button>
+        </div>
+
+        <div class="row g-4 mt-1" id="projectGrid">
+
+          <!-- ========== BACKEND PROJECTS ========== -->
+
+          <!-- 1. Vehicle Rental Reservation System -->
+          <div class="col-12 col-md-6 col-lg-4 project-wrap" data-category="backend">
+            <article class="project-card h-100 d-flex flex-column">
+              <div class="project-type">
+                <i class="bi bi-braces me-1" aria-hidden="true"></i>
+                Backend &amp; Database
+              </div>
+              <h3 class="project-title">Vehicle Rental Reservation System</h3>
+              <p class="project-desc flex-grow-1">
+                A backend system for managing vehicle rental reservations,
+                customer booking records, vehicle availability and rental
+                information through a structured database.
+              </p>
+              <div class="project-tech">
+                <span>PHP</span>
+                <span>MySQL</span>
+              </div>
+            </article>
+          </div>
+
+          <!-- 2. Builder Project -->
+          <div class="col-12 col-md-6 col-lg-4 project-wrap" data-category="backend">
+            <article class="project-card h-100 d-flex flex-column">
+              <div class="project-type">
+                <i class="bi bi-braces me-1" aria-hidden="true"></i>
+                Backend &amp; Database
+              </div>
+              <h3 class="project-title">Aspiring Builders &amp; Marketing</h3>
+              <p class="project-desc flex-grow-1">
+                Backend development for a builder and marketing website,
+                supporting its server-side functionality and database
+                operations.
+              </p>
+              <div class="project-tech">
+                <span>PHP</span>
+                <span>MySQL</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://aspiringbuildersandmarketing.com/" target="_blank" rel="noopener" class="project-link">
+                  <i class="bi bi-box-arrow-up-right me-1" aria-hidden="true"></i>
+                  Live Website
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- 3. Dialer App -->
+          <div class="col-12 col-md-6 col-lg-4 project-wrap" data-category="backend">
+            <article class="project-card h-100 d-flex flex-column">
+              <div class="project-type">
+                <i class="bi bi-people me-1" aria-hidden="true"></i>
+                Team Project
+              </div>
+              <h3 class="project-title">Dialer App for Call Centers</h3>
+              <p class="project-desc flex-grow-1">
+                Collaborated with a development team on the backend of a
+                dialer application for call center operations, using
+                Node.js and MySQL to support application functionality
+                and data management.
+              </p>
+              <div class="project-tech">
+                <span>Node.js</span>
+                <span>MySQL</span>
+              </div>
+            </article>
+          </div>
+
+          <!-- 4. Event Management System -->
+          <div class="col-12 col-md-6 col-lg-4 project-wrap" data-category="backend">
+            <article class="project-card h-100 d-flex flex-column">
+              <div class="project-type">
+                <i class="bi bi-calendar-event me-1" aria-hidden="true"></i>
+                Backend &amp; Database
+              </div>
+              <h3 class="project-title">Event Management System</h3>
+              <p class="project-desc flex-grow-1">
+                A backend application for managing event information,
+                schedules, registrations and related records through
+                server-side logic and database operations.
+              </p>
+              <div class="project-tech">
+                <span>Python</span>
+                <span>Django</span>
+                <span>MySQL</span>
+              </div>
+            </article>
+          </div>
+
+          <!-- 5. Career Management System -->
+          <div class="col-12 col-md-6 col-lg-4 project-wrap" data-category="backend">
+            <article class="project-card h-100 d-flex flex-column">
+              <div class="project-type">
+                <i class="bi bi-briefcase me-1" aria-hidden="true"></i>
+                Backend &amp; APIs
+              </div>
+              <h3 class="project-title">Career Management System</h3>
+              <p class="project-desc flex-grow-1">
+                A job-seeking platform for companies and job applicants,
+                designed to manage job postings, candidate information
+                and recruitment-related records through backend services.
+              </p>
+              <div class="project-tech">
+                <span>Node.js</span>
+                <span>MySQL</span>
+              </div>
+            </article>
+          </div>
+
+          <!-- ========== FULL-STACK PROJECTS ========== -->
+
+          <!-- 6. FYP Children Vaccination System -->
+          <div class="col-12 col-md-6 col-lg-4 project-wrap" data-category="fullstack">
+            <article class="project-card h-100 d-flex flex-column">
+              <div class="project-type">
+                <i class="bi bi-stack me-1" aria-hidden="true"></i>
+                Final Year Project
+              </div>
+              <h3 class="project-title">Children Vaccination System</h3>
+              <p class="project-desc flex-grow-1">
+                A full-stack system for maintaining children's vaccination
+                records, personal information and vaccine laboratory
+                records, helping organize vaccination data and related
+                information in a centralized database.
+              </p>
+              <div class="project-tech">
+                <span>Python</span>
+                <span>Django</span>
+                <span>MySQL</span>
+                <span>JavaScript</span>
+                <span>Bootstrap</span>
+                <span>HTML</span>
+                <span>CSS</span>
+              </div>
+            </article>
+          </div>
+
+          <!-- 7. Khairunas Foundation -->
+          <div class="col-12 col-md-6 col-lg-4 project-wrap" data-category="fullstack">
+            <article class="project-card h-100 d-flex flex-column">
+              <div class="project-type">
+                <i class="bi bi-heart me-1" aria-hidden="true"></i>
+                Full-Stack
+              </div>
+              <h3 class="project-title">Khairunas Foundation</h3>
+              <p class="project-desc flex-grow-1">
+                A charity management web application for recording and
+                managing organizational operations, including donation
+                collection, distribution activities and related records.
+              </p>
+              <div class="project-tech">
+                <span>Python</span>
+                <span>Django</span>
+                <span>MySQL</span>
+                <span>JavaScript</span>
+                <span>Bootstrap</span>
+                <span>HTML</span>
+                <span>CSS</span>
+              </div>
+            </article>
+          </div>
+
+          <!-- 8. SIS Institute -->
+          <div class="col-12 col-md-6 col-lg-4 project-wrap" data-category="fullstack">
+            <article class="project-card h-100 d-flex flex-column">
+              <div class="project-type">
+                <i class="bi bi-mortarboard me-1" aria-hidden="true"></i>
+                Full-Stack
+              </div>
+              <h3 class="project-title">SIS Institute — Safety Courses</h3>
+              <p class="project-desc flex-grow-1">
+                An institute management application for organizing safety
+                course registrations, course schedules, student records
+                and academic activities in one system.
+              </p>
+              <div class="project-tech">
+                <span>Python</span>
+                <span>Django</span>
+                <span>MySQL</span>
+                <span>JavaScript</span>
+                <span>Bootstrap</span>
+                <span>HTML</span>
+                <span>CSS</span>
+              </div>
+            </article>
+          </div>
+
+          <!-- 9. Hotel Order Management System -->
+          <div class="col-12 col-md-6 col-lg-4 project-wrap" data-category="fullstack">
+            <article class="project-card h-100 d-flex flex-column">
+              <div class="project-type">
+                <i class="bi bi-receipt me-1" aria-hidden="true"></i>
+                Full-Stack
+              </div>
+              <h3 class="project-title">Hotel Order Management System</h3>
+              <p class="project-desc flex-grow-1">
+                A web application for managing hotel customer orders and
+                related operations, with server-side processing, database
+                management and an interactive user interface.
+              </p>
+              <div class="project-tech">
+                <span>PHP</span>
+                <span>MySQL</span>
+                <span>JavaScript</span>
+                <span>Bootstrap</span>
+                <span>HTML</span>
+                <span>CSS</span>
+              </div>
+            </article>
+          </div>
+          <!-- ========== FRONTEND PROJECT ========== -->
+          <div class="col-12 col-md-6 col-lg-4 project-wrap" data-category="frontend">
+            <article class="project-card h-100 d-flex flex-column">
+
+              <div class="project-type">
+                <i class="bi bi-window me-1" aria-hidden="true"></i>
+                Frontend Development
+              </div>
+
+              <h3 class="project-title">Personal Portfolio Website</h3>
+
+              <p class="project-desc flex-grow-1">
+                A responsive personal portfolio website built to showcase
+                my skills, projects, technical experience and professional
+                background. Features a clean user interface, responsive
+                layouts and interactive elements for an improved user
+                experience across desktop, tablet and mobile devices.
+              </p>
+
+              <div class="project-tech">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>Bootstrap 5</span>
+                <span>JavaScript</span>
+              </div>
+
+              <div class="project-actions">
+                <a href="https://github.com/Usman-54/portfolio" target="_blank" rel="noopener" class="project-link">
+                  <i class="bi bi-github me-1" aria-hidden="true"></i>
+                  Repository
+                </a>
+
+                <a href="https://usman-54.github.io/portfolio/" target="_blank" rel="noopener" class="project-link">
+                  <i class="bi bi-box-arrow-up-right me-1" aria-hidden="true"></i>
+                  Live Website
+                </a>
+              </div>
+
+            </article>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============ EDUCATION ============ -->
+    <section id="education" class="py-5">
+      <div class="container">
+
+        <p class="text-primary fw-semibold text-uppercase small mb-2">
+          Education
+        </p>
+
+        <h2 class="display-6 fw-bold mb-4">Education</h2>
+
+        <div class="card border-0 shadow-sm rounded-4 p-3 p-md-4 mb-5">
+          <div class="d-flex flex-wrap justify-content-between align-items-start gap-3">
+
+            <div>
+              <h3 class="h4 fw-bold mb-2">BS Software Engineering</h3>
+              <p class="text-secondary mb-0">
+                University of Malakand &middot; Chakdara, KPK, Pakistan
+              </p>
+            </div>
+
+            <div class="text-md-end">
+              <p class="fw-semibold mb-1">2020 &ndash; 2024</p>
+              <p class="text-primary fw-semibold mb-0">
+                CGPA 3.56 / 4.00
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============ CERTIFICATIONS ============ -->
+    <section id="certifications" class="py-5 bg-light">
+      <div class="container">
+
+        <p class="text-primary fw-semibold text-uppercase small mb-2">
+          Professional Development
+        </p>
+
+        <h2 class="display-6 fw-bold mb-3 text-secondary">
+          Certifications &amp; Training
+        </h2>
+
+        <p class="text-secondary mb-4">
+          Certifications, technical training and workshops that have
+          strengthened my programming, web development and networking skills.
+        </p>
+
+        <div class="row g-4">
+
+          <!-- 1. NFTP Web Development -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="card border-0 shadow-sm rounded-4 h-100 p-4">
+
+              <div class="d-flex align-items-center justify-content-center
+                      rounded-3 bg-primary bg-opacity-10 text-primary
+                      mb-3" style="width: 55px; height: 55px;">
+                <i class="bi bi-code-slash fs-3" aria-hidden="true"></i>
+              </div>
+
+              <h3 class="h5 fw-bold mb-2">Web Development</h3>
+
+              <p class="text-secondary mb-3">NFTP</p>
+
+              <div class="mt-auto">
+                <span class="badge bg-primary bg-opacity-10 text-primary
+                         rounded-pill px-3 py-2">
+                  Technical Training
+                </span>
+              </div>
+
+            </article>
+          </div>
+
+          <!-- 2. NAVTTC CCNP -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="card border-0 shadow-sm rounded-4 h-100 p-4">
+
+              <div class="d-flex align-items-center justify-content-center
+                      rounded-3 bg-success bg-opacity-10 text-success
+                      mb-3" style="width: 55px; height: 55px;">
+                <i class="bi bi-router fs-3" aria-hidden="true"></i>
+              </div>
+
+              <h3 class="h5 fw-bold mb-2">CCNP</h3>
+
+              <p class="text-secondary mb-3">NAVTTC</p>
+
+              <div class="mt-auto">
+                <span class="badge bg-success bg-opacity-10 text-success
+                         rounded-pill px-3 py-2">
+                  Networking Training
+                </span>
+              </div>
+
+            </article>
+          </div>
+
+          <!-- 3. IoT Workshop -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="card border-0 shadow-sm rounded-4 h-100 p-4">
+
+              <div class="d-flex align-items-center justify-content-center
+                      rounded-3 bg-info bg-opacity-10 text-info
+                      mb-3" style="width: 55px; height: 55px;">
+                <i class="bi bi-cpu fs-3" aria-hidden="true"></i>
+              </div>
+
+              <h3 class="h5 fw-bold mb-2">
+                Internet of Things (IoT)
+              </h3>
+
+              <p class="text-secondary mb-3">IoT Workshop</p>
+
+              <div class="mt-auto">
+                <span class="badge bg-info bg-opacity-10 text-info
+                         rounded-pill px-3 py-2">
+                  Workshop
+                </span>
+              </div>
+
+            </article>
+          </div>
+
+          <!-- 4. Coursera Python -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="card border-0 shadow-sm rounded-4 h-100 p-4">
+
+              <div class="d-flex align-items-center justify-content-center
+                      rounded-3 bg-warning bg-opacity-10 text-warning
+                      mb-3" style="width: 55px; height: 55px;">
+                <i class="bi bi-filetype-py fs-3" aria-hidden="true"></i>
+              </div>
+
+              <h3 class="h5 fw-bold mb-2">Programming for Everybody</h3>
+
+              <p class="text-secondary mb-3">Basic python programming language</p>
+
+              <div class="mt-auto">
+                <span class="badge bg-warning bg-opacity-10 text-dark
+                         rounded-pill px-3 py-2">
+                  Online Certificate
+                </span>
+              </div>
+
+            </article>
+          </div>
+
+          <!-- 5. Data Structures -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="card border-0 shadow-sm rounded-4 h-100 p-4">
+
+              <div class="d-flex align-items-center justify-content-center
+                      rounded-3 bg-danger bg-opacity-10 text-danger
+                      mb-3" style="width: 55px; height: 55px;">
+                <i class="bi bi-database fs-3" aria-hidden="true"></i>
+              </div>
+
+              <h3 class="h5 fw-bold mb-2">
+                Python Data Structures 
+              </h3>
+
+              <p class="text-secondary mb-3">
+                Programming &amp; Algorithm
+              </p>
+
+              <div class="mt-auto">
+                <span class="badge bg-danger bg-opacity-10 text-danger
+                         rounded-pill px-3 py-2">
+                  Online Certificate
+                </span>
+              </div>
+
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="section section-alt">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-7 text-center">
+            <p class="section-label">Contact</p>
+            <h2 class="section-title">Let's build something together</h2>
+            <p class="text-muted-2">
+              Need a backend built, an API designed, or a full application shipped? The fastest
+              way to reach me is email — or find me on LinkedIn.
+            </p>
+            <div class="d-flex flex-wrap justify-content-center gap-2 mt-4">
+              <a class="btn btn-cta" href="mailto:usmnse@gmail.com">
+                <i class="bi bi-envelope me-2" aria-hidden="true"></i>usmnse@gmail.com
+              </a>
+              <a class="btn btn-outline-cta" href="https://www.linkedin.com/in/usman54/" target="_blank" rel="noopener">
+                <i class="bi bi-linkedin me-2" aria-hidden="true"></i>LinkedIn
+              </a>
+              <a class="btn btn-outline-cta" href="https://github.com/Usman-54" target="_blank" rel="noopener">
+                <i class="bi bi-github me-2" aria-hidden="true"></i>GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row gy-3 align-items-center">
+        <div class="col-md-4 text-center text-md-start">
+          <a class="navbar-brand d-inline-flex align-items-center" href="#home">
+            <span class="brand-mark" aria-hidden="true">UA</span>Usman&nbsp;Ali
+          </a>
+        </div>
+        <div class="col-md-4">
+          <nav aria-label="Footer" class="footer-nav d-flex justify-content-center gap-3 flex-wrap">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+        <div class="col-md-4 text-center text-md-end">
+          <div class="d-inline-flex gap-2">
+            <a href="https://github.com/Usman-54" target="_blank" rel="noopener" class="social-icon"
+              aria-label="Usman Ali on GitHub">
+              <i class="bi bi-github" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/usman54/" target="_blank" rel="noopener" class="social-icon"
+              aria-label="Usman Ali on LinkedIn">
+              <i class="bi bi-linkedin" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <p class="text-center text-muted-2 mt-4 mb-0">
+        &copy; <span id="year">2026</span> Usman Ali. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <button type="button" id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="bi bi-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
 </body>
 
 </html>

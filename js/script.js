@@ -1,88 +1,158 @@
-// @ts-nocheck
+/* ==========================================================================
+   Usman Ali — Portfolio Scripts (vanilla JS)
+   Nav state, offset smooth-scroll, active links, project filters,
+   back-to-top, reveal-on-scroll, footer year.
+   ========================================================================== */
 
-// Navbar scroll effect
-window.addEventListener("scroll", () => {
-  const navbar = document.getElementById("navbar");
-  if (navbar) {
-    navbar.classList.toggle("scrolled", window.scrollY > 50);
-  }
-});
+(function () {
+  "use strict";
 
-// Hero typing effect
-document.addEventListener("DOMContentLoaded", () => {
-  const typedTextElement = document.getElementById("typed-text");
-  if (typedTextElement) {
-    const phrases = ["Web Developer", "Backend Developer", "Front-end Engineer", "Creative Coder"];
-    let phraseIndex = 0, charIndex = 0, isDeleting = false;
+  document.addEventListener("DOMContentLoaded", function () {
+    initNavScrollState();
+    initSmoothScroll();
+    initActiveLinks();
+    initFilters();
+    initBackToTop();
+    initReveal();
+    setYear();
+  });
 
-    function type() {
-      const currentPhrase = phrases[phraseIndex];
-      typedTextElement.textContent = currentPhrase.substring(0, charIndex);
-
-      if (!isDeleting && charIndex < currentPhrase.length) charIndex++;
-      else if (isDeleting && charIndex > 0) charIndex--;
-      else if (!isDeleting && charIndex === currentPhrase.length) {
-        isDeleting = true;
-        setTimeout(type, 1500);
-        return;
-      } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        phraseIndex = (phraseIndex + 1) % phrases.length;
-      }
-
-      setTimeout(type, isDeleting ? 50 : 100);
-    }
-    type();
+  /* ---------- Navbar background after scrolling ---------- */
+  function initNavScrollState() {
+    const nav = document.getElementById("siteNav");
+    if (!nav) return;
+    const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
   }
 
-  // Mobile Menu Toggle
-  const mobileMenuButton = document.getElementById("mobile-menu-button");
-  const mobileMenu = document.getElementById("mobile-menu");
-  if (mobileMenuButton && mobileMenu) {
-    mobileMenuButton.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
+  /* ---------- Smooth scroll with fixed-header offset ---------- */
+  function initSmoothScroll() {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+      link.addEventListener("click", (event) => {
+        const id = link.getAttribute("href");
+        if (!id || id === "#") return;
+        const target = document.querySelector(id);
+        if (!target) return;
+
+        event.preventDefault();
+        const nav = document.getElementById("siteNav");
+        const offset = nav ? nav.offsetHeight : 0;
+        const top = target.getBoundingClientRect().top + window.scrollY - Math.max(offset - 1, 0);
+
+        window.scrollTo({
+          top: top,
+          behavior: reduceMotion ? "auto" : "smooth"
+        });
+
+        const menu = document.getElementById("navMenu");
+        if (menu && menu.classList.contains("show")) {
+          const inst = bootstrap.Collapse.getInstance(menu);
+          if (inst) inst.hide();
+        }
+      });
     });
   }
 
-  // Skill animation
-  const circles = document.querySelectorAll(".skill-circle");
-  circles.forEach(circle => {
-    const percent = parseInt(circle.getAttribute("data-percent"));
-    const fill = circle.querySelector(".skill-fill");
-    const percentText = circle.querySelector(".skill-percent");
-    if (!fill || !percentText) return;
+  /* ---------- Highlight the section currently in view ---------- */
+  function initActiveLinks() {
+    const links = Array.from(document.querySelectorAll(".site-nav .nav-link"));
+    const sections = links
+      .map((l) => document.querySelector(l.getAttribute("href")))
+      .filter(Boolean);
 
-    const radius = 52;
-    const circumference = 2 * Math.PI * radius;
-    fill.style.strokeDasharray = circumference;
-    fill.style.strokeDashoffset = circumference;
+    if (!("IntersectionObserver" in window) || sections.length === 0) return;
 
-    // Color logic
-    let color = "#27ae60";
-    if (percent <= 50) color = "#e74c3c";
-    // else if (percent <=60) color = "#ffc107";#f4b84d
-    else if (percent <= 75) color = "#f4b84d";
-    else if (percent <= 85) color = "#f1c40f";
-    else if (percent <= 100) color = "#5cb85c"
-    fill.style.stroke = color;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          links.forEach((l) => l.classList.remove("active"));
+          const active = links.find(
+            (l) => l.getAttribute("href") === "#" + entry.target.id
+          );
+          if (active) active.classList.add("active");
+        });
+      },
+      { rootMargin: "-40% 0px -55% 0px" }
+    );
 
-    let progress = 0;
-    const interval = setInterval(() => {
-      progress++;
-      fill.style.strokeDashoffset = circumference - (progress / 100) * circumference;
-      percentText.textContent = `${progress}%`;
-      if (progress >= percent) clearInterval(interval);
-    }, 20);
-  });
-});
+    sections.forEach((s) => observer.observe(s));
+  }
 
-// Show/hide project demo video
-function showDemoVideo(id) {
-  const el = document.getElementById(id);
-  if (el) el.style.display = "block";
-}
+  /* ---------- Project category filters ---------- */
+  function initFilters() {
+    const buttons = Array.from(document.querySelectorAll(".filter-btn"));
+    const items = Array.from(document.querySelectorAll(".project-wrap"));
+    if (buttons.length === 0 || items.length === 0) return;
 
-function hideDemoVideo(id) {
-  const el = document.getElementById(id);
-  if (el) el.style.display = "none";
-}
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        buttons.forEach((b) => {
+          b.classList.remove("active");
+          b.setAttribute("aria-pressed", "false");
+        });
+        btn.classList.add("active");
+        btn.setAttribute("aria-pressed", "true");
+
+        const filter = btn.dataset.filter;
+        items.forEach((item) => {
+          const show = filter === "all" || item.dataset.category === filter;
+          item.classList.toggle("hidden-cat", !show);
+        });
+      });
+    });
+  }
+
+  /* ---------- Back-to-top button ---------- */
+  function initBackToTop() {
+    const btn = document.getElementById("backToTop");
+    if (!btn) return;
+
+    const onScroll = () => btn.classList.toggle("visible", window.scrollY > 600);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    btn.addEventListener("click", () => {
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+    });
+  }
+
+  /* ---------- Subtle reveal-on-scroll ---------- */
+  function initReveal() {
+    const targets = document.querySelectorAll(
+      ".section-label, .section-title, .skill-panel, .timeline-item, .project-wrap, .edu-card, .filter-bar"
+    );
+    if (targets.length === 0) return;
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion || !("IntersectionObserver" in window)) {
+      targets.forEach((t) => t.classList.add("revealed"));
+      return;
+    }
+
+    targets.forEach((t) => t.classList.add("reveal"));
+
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("revealed");
+          obs.unobserve(entry.target);
+        });
+      },
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.05 }
+    );
+
+    targets.forEach((t) => observer.observe(t));
+  }
+
+  /* ---------- Dynamic footer year ---------- */
+  function setYear() {
+    const el = document.getElementById("year");
+    if (el) el.textContent = new Date().getFullYear();
+  }
+})();
