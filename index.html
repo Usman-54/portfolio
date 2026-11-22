@@ -204,6 +204,33 @@
 
         <div class="timeline">
           <article class="timeline-item">
+  <div class="timeline-node" aria-hidden="true"></div>
+  <div class="timeline-card">
+    <div class="d-flex flex-wrap justify-content-between align-items-baseline gap-2">
+      <h3 class="role-title">Backend Developer</h3>
+      <span class="role-meta muted-date">Buzzware Tech (Pvt) Ltd &bull; 1 Year</span>
+    </div>
+    <p class="role-company">
+      <a href="https://buzzwaretech.com/" target="_blank" rel="noopener">buzzwaretech.com</a>
+    </p>
+    <p class="role-desc text-muted-2">
+      Building and maintaining scalable backend services, RESTful APIs, and database architectures for web and enterprise applications.
+    </p>
+    <ul class="role-points">
+      <li>Developed and maintained reliable backend services and RESTful APIs to support core application workflows and real-time operations.</li>
+      <li>Integrated third-party APIs and external services to automate data exchange and streamline business processes.</li>
+      <li>Designed, optimized, and managed relational database schemas while ensuring data integrity, security, and strict access isolation.</li>
+      <li>Collaborated with frontend teams to troubleshoot bottlenecks, optimize query performance, and reduce endpoint response latency.</li>
+    </ul>
+    <div class="role-tech">
+      <span>Backend Development</span>
+      <span>Database Management</span>
+      <span>Web Applications</span>
+      <span>API Integration</span>
+    </div>
+  </div>
+</article>
+          <article class="timeline-item">
             <div class="timeline-node" aria-hidden="true"></div>
             <div class="timeline-card">
               <div class="d-flex flex-wrap justify-content-between align-items-baseline gap-2">
@@ -260,285 +287,329 @@
 
     <!-- ============ PROJECTS ============ -->
 
-    <!-- ============ PROJECTS ============ -->
-    <section id="projects" class="section section-alt">
-      <div class="container">
+   
 
-        <p class="section-label">Projects</p>
-        <h2 class="section-title">
-          Products I've built — with the code to prove it
-        </h2>
+<!-- ============ PROJECTS ============ -->
+<section id="projects" class="section section-alt">
+  <div class="container">
 
-        <div class="filter-bar" role="group" aria-label="Filter projects by category">
-          <button class="filter-btn active" data-filter="all" type="button">
-            All Projects
-          </button>
-          <button class="filter-btn" data-filter="backend" type="button">
-            Backend &amp; APIs
-          </button>
-          <button class="filter-btn" data-filter="fullstack" type="button">
-            Full-Stack
-          </button>
-        </div>
+    <p class="section-label">My Projects</p>
 
-        <div class="row g-4 mt-1" id="projectGrid">
+    <h2 class="section-title">
+      Projects I've Built — With the Code to Prove It
+    </h2>
 
-          <!-- ========== BACKEND PROJECTS ========== -->
+    <p class="text-muted-2 mb-4" style="max-width: 700px;">
+      Explore my development projects, practical applications,
+      backend systems, full-stack web applications and AI research.
+      Each available repository links directly to GitHub.
+    </p>
 
-          <!-- 1. Vehicle Rental Reservation System -->
-          <div class="col-12 col-md-6 col-lg-4 project-wrap" data-category="backend">
-            <article class="project-card h-100 d-flex flex-column">
-              <div class="project-type">
-                <i class="bi bi-braces me-1" aria-hidden="true"></i>
-                Backend &amp; Database
-              </div>
-              <h3 class="project-title">Vehicle Rental Reservation System</h3>
-              <p class="project-desc flex-grow-1">
-                A backend system for managing vehicle rental reservations,
-                customer booking records, vehicle availability and rental
-                information through a structured database.
-              </p>
-              <div class="project-tech">
-                <span>PHP</span>
-                <span>MySQL</span>
-              </div>
-            </article>
+    <!-- Project search -->
+    <div class="mb-4" style="max-width: 500px;">
+      <input
+        type="search"
+        id="projectSearch"
+        class="form-control"
+        placeholder="Search my projects..."
+        aria-label="Search projects"
+      >
+    </div>
+
+    <!-- Project filters -->
+    <div class="filter-bar"
+         role="group"
+         aria-label="Filter projects by category">
+
+      <button class="filter-btn active" data-filter="all"
+              type="button" aria-pressed="true">
+        All Projects
+      </button>
+
+      <button class="filter-btn" data-filter="backend"
+              type="button" aria-pressed="false">
+        Backend &amp; APIs
+      </button>
+
+      <button class="filter-btn" data-filter="fullstack"
+              type="button" aria-pressed="false">
+        Full-Stack
+      </button>
+
+      <button class="filter-btn" data-filter="frontend"
+              type="button" aria-pressed="false">
+        Frontend
+      </button>
+
+      <button class="filter-btn" data-filter="other"
+              type="button" aria-pressed="false">
+        Other
+      </button>
+
+    </div>
+
+    <!-- Project grid -->
+    <div class="row g-4 mt-1" id="projectGrid" aria-live="polite">
+
+      <!-- 1. Smart Store -->
+      <div class="col-12 col-md-6 col-lg-4 project-wrap"
+           data-category="fullstack">
+        <article class="project-card h-100 d-flex flex-column">
+
+          <div class="project-type">
+            <i class="bi bi-shop me-1" aria-hidden="true"></i>
+            Web Application
           </div>
 
-          <!-- 2. Builder Project -->
-          <div class="col-12 col-md-6 col-lg-4 project-wrap" data-category="backend">
-            <article class="project-card h-100 d-flex flex-column">
-              <div class="project-type">
-                <i class="bi bi-braces me-1" aria-hidden="true"></i>
-                Backend &amp; Database
-              </div>
-              <h3 class="project-title">Aspiring Builders &amp; Marketing</h3>
-              <p class="project-desc flex-grow-1">
-                Backend development for a builder and marketing website,
-                supporting its server-side functionality and database
-                operations.
-              </p>
-              <div class="project-tech">
-                <span>PHP</span>
-                <span>MySQL</span>
-              </div>
-              <div class="project-actions">
-                <a href="https://aspiringbuildersandmarketing.com/" target="_blank" rel="noopener" class="project-link">
-                  <i class="bi bi-box-arrow-up-right me-1" aria-hidden="true"></i>
-                  Live Website
-                </a>
-              </div>
-            </article>
+          <h3 class="project-title">Smart Store</h3>
+
+          <p class="project-desc flex-grow-1">
+            A web-based Smart Store project. Explore the repository
+            to review its implementation, source code, application
+            structure and available functionality.
+          </p>
+
+          <div class="project-actions">
+            <a href="https://github.com/Usman-54/smart-store"
+               target="_blank" rel="noopener noreferrer"
+               class="project-link">
+              <i class="bi bi-github me-1" aria-hidden="true"></i>
+              GitHub Repository
+            </a>
           </div>
 
-          <!-- 3. Dialer App -->
-          <div class="col-12 col-md-6 col-lg-4 project-wrap" data-category="backend">
-            <article class="project-card h-100 d-flex flex-column">
-              <div class="project-type">
-                <i class="bi bi-people me-1" aria-hidden="true"></i>
-                Team Project
-              </div>
-              <h3 class="project-title">Dialer App for Call Centers</h3>
-              <p class="project-desc flex-grow-1">
-                Collaborated with a development team on the backend of a
-                dialer application for call center operations, using
-                Node.js and MySQL to support application functionality
-                and data management.
-              </p>
-              <div class="project-tech">
-                <span>Node.js</span>
-                <span>MySQL</span>
-              </div>
-            </article>
-          </div>
-
-          <!-- 4. Event Management System -->
-          <div class="col-12 col-md-6 col-lg-4 project-wrap" data-category="backend">
-            <article class="project-card h-100 d-flex flex-column">
-              <div class="project-type">
-                <i class="bi bi-calendar-event me-1" aria-hidden="true"></i>
-                Backend &amp; Database
-              </div>
-              <h3 class="project-title">Event Management System</h3>
-              <p class="project-desc flex-grow-1">
-                A backend application for managing event information,
-                schedules, registrations and related records through
-                server-side logic and database operations.
-              </p>
-              <div class="project-tech">
-                <span>Python</span>
-                <span>Django</span>
-                <span>MySQL</span>
-              </div>
-            </article>
-          </div>
-
-          <!-- 5. Career Management System -->
-          <div class="col-12 col-md-6 col-lg-4 project-wrap" data-category="backend">
-            <article class="project-card h-100 d-flex flex-column">
-              <div class="project-type">
-                <i class="bi bi-briefcase me-1" aria-hidden="true"></i>
-                Backend &amp; APIs
-              </div>
-              <h3 class="project-title">Career Management System</h3>
-              <p class="project-desc flex-grow-1">
-                A job-seeking platform for companies and job applicants,
-                designed to manage job postings, candidate information
-                and recruitment-related records through backend services.
-              </p>
-              <div class="project-tech">
-                <span>Node.js</span>
-                <span>MySQL</span>
-              </div>
-            </article>
-          </div>
-
-          <!-- ========== FULL-STACK PROJECTS ========== -->
-
-          <!-- 6. FYP Children Vaccination System -->
-          <div class="col-12 col-md-6 col-lg-4 project-wrap" data-category="fullstack">
-            <article class="project-card h-100 d-flex flex-column">
-              <div class="project-type">
-                <i class="bi bi-stack me-1" aria-hidden="true"></i>
-                Final Year Project
-              </div>
-              <h3 class="project-title">Children Vaccination System</h3>
-              <p class="project-desc flex-grow-1">
-                A full-stack system for maintaining children's vaccination
-                records, personal information and vaccine laboratory
-                records, helping organize vaccination data and related
-                information in a centralized database.
-              </p>
-              <div class="project-tech">
-                <span>Python</span>
-                <span>Django</span>
-                <span>MySQL</span>
-                <span>JavaScript</span>
-                <span>Bootstrap</span>
-                <span>HTML</span>
-                <span>CSS</span>
-              </div>
-            </article>
-          </div>
-
-          <!-- 7. Khairunas Foundation -->
-          <div class="col-12 col-md-6 col-lg-4 project-wrap" data-category="fullstack">
-            <article class="project-card h-100 d-flex flex-column">
-              <div class="project-type">
-                <i class="bi bi-heart me-1" aria-hidden="true"></i>
-                Full-Stack
-              </div>
-              <h3 class="project-title">Khairunas Foundation</h3>
-              <p class="project-desc flex-grow-1">
-                A charity management web application for recording and
-                managing organizational operations, including donation
-                collection, distribution activities and related records.
-              </p>
-              <div class="project-tech">
-                <span>Python</span>
-                <span>Django</span>
-                <span>MySQL</span>
-                <span>JavaScript</span>
-                <span>Bootstrap</span>
-                <span>HTML</span>
-                <span>CSS</span>
-              </div>
-            </article>
-          </div>
-
-          <!-- 8. SIS Institute -->
-          <div class="col-12 col-md-6 col-lg-4 project-wrap" data-category="fullstack">
-            <article class="project-card h-100 d-flex flex-column">
-              <div class="project-type">
-                <i class="bi bi-mortarboard me-1" aria-hidden="true"></i>
-                Full-Stack
-              </div>
-              <h3 class="project-title">SIS Institute — Safety Courses</h3>
-              <p class="project-desc flex-grow-1">
-                An institute management application for organizing safety
-                course registrations, course schedules, student records
-                and academic activities in one system.
-              </p>
-              <div class="project-tech">
-                <span>Python</span>
-                <span>Django</span>
-                <span>MySQL</span>
-                <span>JavaScript</span>
-                <span>Bootstrap</span>
-                <span>HTML</span>
-                <span>CSS</span>
-              </div>
-            </article>
-          </div>
-
-          <!-- 9. Hotel Order Management System -->
-          <div class="col-12 col-md-6 col-lg-4 project-wrap" data-category="fullstack">
-            <article class="project-card h-100 d-flex flex-column">
-              <div class="project-type">
-                <i class="bi bi-receipt me-1" aria-hidden="true"></i>
-                Full-Stack
-              </div>
-              <h3 class="project-title">Hotel Order Management System</h3>
-              <p class="project-desc flex-grow-1">
-                A web application for managing hotel customer orders and
-                related operations, with server-side processing, database
-                management and an interactive user interface.
-              </p>
-              <div class="project-tech">
-                <span>PHP</span>
-                <span>MySQL</span>
-                <span>JavaScript</span>
-                <span>Bootstrap</span>
-                <span>HTML</span>
-                <span>CSS</span>
-              </div>
-            </article>
-          </div>
-          <!-- ========== FRONTEND PROJECT ========== -->
-          <div class="col-12 col-md-6 col-lg-4 project-wrap" data-category="frontend">
-            <article class="project-card h-100 d-flex flex-column">
-
-              <div class="project-type">
-                <i class="bi bi-window me-1" aria-hidden="true"></i>
-                Frontend Development
-              </div>
-
-              <h3 class="project-title">Personal Portfolio Website</h3>
-
-              <p class="project-desc flex-grow-1">
-                A responsive personal portfolio website built to showcase
-                my skills, projects, technical experience and professional
-                background. Features a clean user interface, responsive
-                layouts and interactive elements for an improved user
-                experience across desktop, tablet and mobile devices.
-              </p>
-
-              <div class="project-tech">
-                <span>HTML5</span>
-                <span>CSS3</span>
-                <span>Bootstrap 5</span>
-                <span>JavaScript</span>
-              </div>
-
-              <div class="project-actions">
-                <a href="https://github.com/Usman-54/portfolio" target="_blank" rel="noopener" class="project-link">
-                  <i class="bi bi-github me-1" aria-hidden="true"></i>
-                  Repository
-                </a>
-
-                <a href="https://usman-54.github.io/portfolio/" target="_blank" rel="noopener" class="project-link">
-                  <i class="bi bi-box-arrow-up-right me-1" aria-hidden="true"></i>
-                  Live Website
-                </a>
-              </div>
-
-            </article>
-          </div>
-
-
-        </div>
+        </article>
       </div>
-    </section>
+
+
+      <!-- 2. AI Agent Papers -->
+      <div class="col-12 col-md-6 col-lg-4 project-wrap"
+           data-category="other">
+        <article class="project-card h-100 d-flex flex-column">
+
+          <div class="project-type">
+            <i class="bi bi-robot me-1" aria-hidden="true"></i>
+            AI Research &amp; Documentation
+          </div>
+
+          <h3 class="project-title">AI Agent Papers</h3>
+
+          <p class="project-desc flex-grow-1">
+            A curated collection of AI-agent research papers covering
+            multi-agent systems, memory and RAG, agent tools, evaluation,
+            observability and AI-agent security. A useful research
+            resource for exploring developments in agentic AI.
+          </p>
+
+          <div class="project-tech">
+            <span>Artificial Intelligence</span>
+            <span>AI Agents</span>
+            <span>Research</span>
+            <span>RAG</span>
+            <span>Multi-Agent Systems</span>
+          </div>
+
+          <div class="project-actions">
+            <a href="https://github.com/Usman-54/ai-agent-papers"
+               target="_blank" rel="noopener noreferrer"
+               class="project-link">
+              <i class="bi bi-github me-1" aria-hidden="true"></i>
+              GitHub Repository
+            </a>
+          </div>
+
+        </article>
+      </div>
+
+
+      <!-- 3. Dialer App -->
+      <div class="col-12 col-md-6 col-lg-4 project-wrap"
+           data-category="backend">
+        <article class="project-card h-100 d-flex flex-column">
+
+          <div class="project-type">
+            <i class="bi bi-telephone me-1" aria-hidden="true"></i>
+            Team Project
+          </div>
+
+          <h3 class="project-title">Dialer App for Call Centers</h3>
+
+          <p class="project-desc flex-grow-1">
+            Collaborated with a development team on the backend of a
+            dialer application for call center operations. Worked with
+            Node.js and MySQL to support application functionality
+            and data management.
+          </p>
+
+          <div class="project-tech">
+            <span>Node.js</span>
+            <span>MySQL</span>
+          </div>
+
+          <div class="project-actions">
+            <a href="https://github.com/Usman-54/Dailer"
+               target="_blank" rel="noopener noreferrer"
+               class="project-link">
+              <i class="bi bi-github me-1" aria-hidden="true"></i>
+              GitHub Repository
+            </a>
+          </div>
+
+        </article>
+      </div>
+
+
+      <!-- 4. Children Vaccination System -->
+      <div class="col-12 col-md-6 col-lg-4 project-wrap"
+           data-category="fullstack">
+        <article class="project-card h-100 d-flex flex-column">
+
+          <div class="project-type">
+            <i class="bi bi-heart-pulse me-1" aria-hidden="true"></i>
+            Final Year Project
+          </div>
+
+          <h3 class="project-title">Children Vaccination System</h3>
+
+          <p class="project-desc flex-grow-1">
+            A full-stack system for maintaining children's vaccination
+            records, personal information and vaccine laboratory records.
+            It organizes vaccination-related information in a centralized
+            database and provides a web-based system for managing records.
+          </p>
+
+          <div class="project-tech">
+            <span>Python</span>
+            <span>Django</span>
+            <span>MySQL</span>
+            <span>JavaScript</span>
+            <span>Bootstrap</span>
+            <span>HTML</span>
+            <span>CSS</span>
+          </div>
+
+          <div class="project-actions">
+            <a href="https://github.com/Usman-54/Children-Vaccination-System"
+               target="_blank" rel="noopener noreferrer"
+               class="project-link">
+              <i class="bi bi-github me-1" aria-hidden="true"></i>
+              GitHub Repository
+            </a>
+          </div>
+
+        </article>
+      </div>
+
+
+      <!-- 5. Khairnus Foundation -->
+      <div class="col-12 col-md-6 col-lg-4 project-wrap"
+           data-category="fullstack">
+        <article class="project-card h-100 d-flex flex-column">
+
+          <div class="project-type">
+            <i class="bi bi-heart me-1" aria-hidden="true"></i>
+            Django Web Application
+          </div>
+
+          <h3 class="project-title">Khairnus Foundation</h3>
+
+          <p class="project-desc flex-grow-1">
+            A foundation-related web application developed as an
+            academic project. Its repository contains Django project
+            files, templates, static resources, media assets and
+            database files.
+          </p>
+
+          <div class="project-tech">
+            <span>Python</span>
+            <span>Django</span>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+          </div>
+
+          <div class="project-actions">
+            <a href="https://github.com/Usman-54/Khairnus-Foundation"
+               target="_blank" rel="noopener noreferrer"
+               class="project-link">
+              <i class="bi bi-github me-1" aria-hidden="true"></i>
+              GitHub Repository
+            </a>
+          </div>
+
+        </article>
+      </div>
+
+
+      <!-- 6. Aspiring Builders & Marketing -->
+      <div class="col-12 col-md-6 col-lg-4 project-wrap"
+           data-category="backend">
+        <article class="project-card h-100 d-flex flex-column">
+
+          <div class="project-type">
+            <i class="bi bi-buildings me-1" aria-hidden="true"></i>
+            Backend Development
+          </div>
+
+          <h3 class="project-title">Aspiring Builders &amp; Marketing</h3>
+
+          <p class="project-desc flex-grow-1">
+            Backend development for a builder and marketing website,
+            supporting server-side functionality and database
+            operations for a business website.
+          </p>
+
+          <div class="project-tech">
+            <span>PHP</span>
+            <span>MySQL</span>
+          </div>
+
+          <div class="project-actions">
+            <a href="https://github.com/Usman-54/Aspiring_builders"
+               target="_blank" rel="noopener noreferrer"
+               class="project-link">
+              <i class="bi bi-github me-1" aria-hidden="true"></i>
+              GitHub Repository
+            </a>
+
+            <a href="https://aspiringbuildersandmarketing.com/"
+               target="_blank" rel="noopener noreferrer"
+               class="project-link">
+              <i class="bi bi-box-arrow-up-right me-1"
+                 aria-hidden="true"></i>
+              Live Website
+            </a>
+          </div>
+
+        </article>
+      </div>
+
+
+
+    </div>
+
+    <!-- No projects found -->
+    <div id="noProjects" class="text-center py-5 d-none">
+      <i class="bi bi-search fs-2 text-muted"></i>
+      <h4 class="mt-3">No Projects Found</h4>
+      <p class="text-muted-2">
+        Try another search or select a different category.
+      </p>
+    </div>
+
+    <!-- GitHub profile -->
+    <div class="text-center mt-5">
+      <a href="https://github.com/Usman-54"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="btn btn-outline-cta">
+        <i class="bi bi-github me-2"></i>
+        Explore All My GitHub Projects
+      </a>
+    </div>
+
+  </div>
+</section>
 
 
     <!-- ============ EDUCATION ============ -->

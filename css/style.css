@@ -418,6 +418,37 @@ a { color: var(--cyan); text-decoration: none; }
   border-color: var(--cyan);
 }
 
+/* extra for css style for GitHub projects */
+
+/* ---------- GitHub Projects Enhancements ---------- */
+
+#projectSearch {
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.8rem 1rem;
+}
+
+#projectSearch::placeholder {
+  color: var(--text-muted);
+}
+
+#projectSearch:focus {
+  background: var(--surface);
+  color: var(--ink);
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.1);
+}
+
+.project-meta {
+  font-size: 0.8rem;
+}
+
+.project-meta i {
+  color: var(--cyan);
+}
+
 /* ---------- Education ---------- */
 .edu-card {
   padding: 1.35rem 1.5rem;
